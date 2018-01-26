@@ -1,0 +1,20 @@
+{"frames": {
+
+"emoticons.png":
+{
+	"frame": {"x":1,"y":1,"w":96,"h":208},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":96,"h":208},
+	"sourceSize": {"w":96,"h":208}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "pop_up.png",
+	"format": "RGBA8888",
+	"size": {"w":98,"h":210},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:dca50b7aec0cafa5eb8fc4e93eae06a5:02f42fbde5cb92a33811a10db66b18d4:0c1a3fd9cf5099bf8ba2e1dec9df8341$"
+}
+}

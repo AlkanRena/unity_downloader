@@ -1,0 +1,20 @@
+{"frames": {
+
+"warTileset_32x32.png":
+{
+	"frame": {"x":1,"y":1,"w":193,"h":129},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":193,"h":129},
+	"sourceSize": {"w":256,"h":256}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "floor.png",
+	"format": "RGBA8888",
+	"size": {"w":195,"h":131},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:21fd1fe35045d61d0a38d17212748323:0371bf51f656ba57b49e1622aa15d969:983c4ec08eeb1e3b230a24f8892bde6f$"
+}
+}

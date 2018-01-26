@@ -41,19 +41,96 @@
     "info": {
       "editorName": "Level",
       "setAll": [],
-      "children": [{
-        "type": "text",
-        "id": "1caab328-1560-4093-9221-f7313302024f",
-        "info": {
-          "editorName": "hellowText",
-          "x": 343.9580078125,
-          "y": 292.2246398925781,
-          "text": "Hello world!"
+      "children": [
+        {
+          "type": "spritesheet",
+          "id": "d5cba154-952e-4d0c-bbd3-2a6d1f374598",
+          "asset": "0",
+          "info": {
+            "editorName": "ui_icons",
+            "x": 32,
+            "scale.x": 2,
+            "scale.y": 2
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "3dfe715f-c0e2-4b6e-ba12-a0861960c5b5",
+          "asset": "1",
+          "info": {
+            "editorName": "ui_icons1",
+            "scale.x": 2,
+            "scale.y": 2
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "c0782c0b-ecfc-48df-84fd-9e811df10254",
+          "asset": "2",
+          "info": {
+            "editorName": "ui_icons2",
+            "x": 64,
+            "scale.x": 2,
+            "scale.y": 2
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "541b99f7-233b-44db-ac05-caba2c85cde2",
+          "asset": "3",
+          "info": {
+            "editorName": "ui_icons3",
+            "x": 128,
+            "scale.x": 2,
+            "scale.y": 2
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "5bceb77a-2d39-4828-964a-83dd0de3adcb",
+          "asset": "4",
+          "info": {
+            "editorName": "ui_icons4",
+            "x": 96,
+            "scale.x": 2,
+            "scale.y": 2
+          }
         }
-      }]
+      ]
     }
   },
   "type": "STATE",
-  "asset-table": {},
+  "asset-table": {
+    "0": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "ui_icons",
+      "sprite": "52"
+    },
+    "1": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "ui_icons",
+      "sprite": "40"
+    },
+    "2": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "ui_icons",
+      "sprite": "42"
+    },
+    "3": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "ui_icons",
+      "sprite": "43"
+    },
+    "4": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "ui_icons",
+      "sprite": "41"
+    }
+  },
   "prefab-table": {}
 }

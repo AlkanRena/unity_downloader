@@ -79,7 +79,11 @@
     }
   ],
   "meta": {
+<<<<<<< HEAD
     "generated": "1517006998209",
+=======
+    "generated": "1516994668851",
+>>>>>>> e771e1d0476db11a4d83aa70ce8acec5a67f489e
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

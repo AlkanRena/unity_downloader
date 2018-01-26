@@ -25,7 +25,7 @@ Level.prototype.init = function () {
 	this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 	this.scale.pageAlignHorizontally = true;
 	this.scale.pageAlignVertically = true;
-	this.stage.backgroundColor = '#ffffff';
+	this.stage.backgroundColor = '#bfbfbf';
 	
 };
 
@@ -36,6 +36,7 @@ Level.prototype.preload = function () {
 };
 
 Level.prototype.create = function () {
+<<<<<<< HEAD
 	var _ui_icons = this.add.sprite(32, 0, 'ui_icons', 52);
 	_ui_icons.scale.setTo(2.0, 2.0);
 	
@@ -50,6 +51,11 @@ Level.prototype.create = function () {
 	
 	var _ui_icons4 = this.add.sprite(96, 0, 'ui_icons', 41);
 	_ui_icons4.scale.setTo(2.0, 2.0);
+=======
+	this.add.sprite(202, 366, 'user', 0);
+	
+	this.add.sprite(202, 464, 'chair', 0);
+>>>>>>> e771e1d0476db11a4d83aa70ce8acec5a67f489e
 	
 	
 	
@@ -57,3 +63,13 @@ Level.prototype.create = function () {
 
 /* --- end generated code --- */
 // -- user code here --
+
+
+Level.prototype.update = function () {
+	if (this.input.activePointer.leftButton.isDown) {
+		var pos_X = this.input.circle.x - 16;
+		var pos_Y = this.input.circle.y - 16;
+		console.log(this.input);
+		this.add.sprite(pos_X, pos_Y, 'wifi', 0);
+	}
+};

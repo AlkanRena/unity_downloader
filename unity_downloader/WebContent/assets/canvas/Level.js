@@ -36,28 +36,19 @@ Level.prototype.preload = function () {
 };
 
 Level.prototype.create = function () {
-
-	var _ui_icons = this.add.sprite(32, 0, 'ui_icons', 52);
-	_ui_icons.scale.setTo(2.0, 2.0);
-	
-	var _ui_icons1 = this.add.sprite(0, 0, 'ui_icons', 40);
-	_ui_icons1.scale.setTo(2.0, 2.0);
-	
-	var _ui_icons2 = this.add.sprite(64, 0, 'ui_icons', 42);
-	_ui_icons2.scale.setTo(2.0, 2.0);
-	
-	var _ui_icons3 = this.add.sprite(128, 0, 'ui_icons', 43);
-	_ui_icons3.scale.setTo(2.0, 2.0);
-	
-	var _ui_icons4 = this.add.sprite(96, 0, 'ui_icons', 41);
-	_ui_icons4.scale.setTo(2.0, 2.0);
-
 	this.add.sprite(202, 366, 'user', 0);
 	
 	this.add.sprite(202, 464, 'chair', 0);
-
+	
+	var _router_1 = this.add.sprite(192, 207, 'wifi', 0);
 	
 	
+	
+	// public fields
+	
+	this.fRouter_1 = _router_1;
+	_router_1.inputEnabled = true;
+	_router_1.input.enableDrag();
 	
 };
 
@@ -66,10 +57,5 @@ Level.prototype.create = function () {
 
 
 Level.prototype.update = function () {
-	if (this.input.activePointer.leftButton.isDown) {
-		var pos_X = this.input.circle.x - 16;
-		var pos_Y = this.input.circle.y - 16;
-		console.log(this.input);
-		this.add.sprite(pos_X, pos_Y, 'wifi', 0);
-	}
+	
 };

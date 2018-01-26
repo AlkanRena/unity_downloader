@@ -44,74 +44,22 @@
       "children": [
         {
           "type": "spritesheet",
-<<<<<<< HEAD
-          "id": "d5cba154-952e-4d0c-bbd3-2a6d1f374598",
-          "asset": "0",
-          "info": {
-            "editorName": "ui_icons",
-            "x": 32,
-            "scale.x": 2,
-            "scale.y": 2
-=======
           "id": "f806ae3f-06e9-4902-acf7-29e6ddd05ae9",
           "asset": "0",
           "info": {
             "editorName": "user",
             "x": 202,
             "y": 366
->>>>>>> e771e1d0476db11a4d83aa70ce8acec5a67f489e
           }
         },
         {
           "type": "spritesheet",
-<<<<<<< HEAD
-          "id": "3dfe715f-c0e2-4b6e-ba12-a0861960c5b5",
-          "asset": "1",
-          "info": {
-            "editorName": "ui_icons1",
-            "scale.x": 2,
-            "scale.y": 2
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "c0782c0b-ecfc-48df-84fd-9e811df10254",
-          "asset": "2",
-          "info": {
-            "editorName": "ui_icons2",
-            "x": 64,
-            "scale.x": 2,
-            "scale.y": 2
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "541b99f7-233b-44db-ac05-caba2c85cde2",
-          "asset": "3",
-          "info": {
-            "editorName": "ui_icons3",
-            "x": 128,
-            "scale.x": 2,
-            "scale.y": 2
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "5bceb77a-2d39-4828-964a-83dd0de3adcb",
-          "asset": "4",
-          "info": {
-            "editorName": "ui_icons4",
-            "x": 96,
-            "scale.x": 2,
-            "scale.y": 2
-=======
           "id": "66cb8db4-c09f-49b0-a2d0-48ca07b0e343",
           "asset": "1",
           "info": {
             "editorName": "chair",
             "x": 202,
             "y": 464
->>>>>>> e771e1d0476db11a4d83aa70ce8acec5a67f489e
           }
         }
       ]
@@ -122,42 +70,14 @@
     "0": {
       "file": "WebContent/assets/pack.json",
       "section": "level",
-<<<<<<< HEAD
-      "asset": "ui_icons",
-      "sprite": "52"
-=======
       "asset": "user",
       "sprite": "0"
->>>>>>> e771e1d0476db11a4d83aa70ce8acec5a67f489e
     },
     "1": {
       "file": "WebContent/assets/pack.json",
       "section": "level",
-<<<<<<< HEAD
-      "asset": "ui_icons",
-      "sprite": "40"
-    },
-    "2": {
-      "file": "WebContent/assets/pack.json",
-      "section": "level",
-      "asset": "ui_icons",
-      "sprite": "42"
-    },
-    "3": {
-      "file": "WebContent/assets/pack.json",
-      "section": "level",
-      "asset": "ui_icons",
-      "sprite": "43"
-    },
-    "4": {
-      "file": "WebContent/assets/pack.json",
-      "section": "level",
-      "asset": "ui_icons",
-      "sprite": "41"
-=======
       "asset": "chair",
       "sprite": "0"
->>>>>>> e771e1d0476db11a4d83aa70ce8acec5a67f489e
     }
   },
   "prefab-table": {}

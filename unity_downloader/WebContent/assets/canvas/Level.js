@@ -36,7 +36,7 @@ Level.prototype.preload = function () {
 };
 
 Level.prototype.create = function () {
-<<<<<<< HEAD
+
 	var _ui_icons = this.add.sprite(32, 0, 'ui_icons', 52);
 	_ui_icons.scale.setTo(2.0, 2.0);
 	
@@ -51,11 +51,11 @@ Level.prototype.create = function () {
 	
 	var _ui_icons4 = this.add.sprite(96, 0, 'ui_icons', 41);
 	_ui_icons4.scale.setTo(2.0, 2.0);
-=======
+
 	this.add.sprite(202, 366, 'user', 0);
 	
 	this.add.sprite(202, 464, 'chair', 0);
->>>>>>> e771e1d0476db11a4d83aa70ce8acec5a67f489e
+
 	
 	
 	

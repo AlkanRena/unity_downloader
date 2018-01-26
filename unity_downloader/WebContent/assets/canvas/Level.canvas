@@ -9,9 +9,9 @@
     "lang": "JAVA_SCRIPT",
     "baseClass": "Phaser.State",
     "backgroundColor": [
-      180,
-      180,
-      180
+      163,
+      163,
+      163
     ],
     "gridColor": [
       200,
@@ -26,9 +26,9 @@
     "pageAlignHorizontally": true,
     "pageAlignVertically": true,
     "stageBackgroundColor": [
-      255,
-      255,
-      255
+      191,
+      191,
+      191
     ],
     "autoLoad": true,
     "preloadSpriteId": "",
@@ -41,19 +41,44 @@
     "info": {
       "editorName": "Level",
       "setAll": [],
-      "children": [{
-        "type": "text",
-        "id": "1caab328-1560-4093-9221-f7313302024f",
-        "info": {
-          "editorName": "hellowText",
-          "x": 343.9580078125,
-          "y": 292.2246398925781,
-          "text": "Hello world!"
+      "children": [
+        {
+          "type": "spritesheet",
+          "id": "f806ae3f-06e9-4902-acf7-29e6ddd05ae9",
+          "asset": "0",
+          "info": {
+            "editorName": "user",
+            "x": 202,
+            "y": 366
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "66cb8db4-c09f-49b0-a2d0-48ca07b0e343",
+          "asset": "1",
+          "info": {
+            "editorName": "chair",
+            "x": 202,
+            "y": 464
+          }
         }
-      }]
+      ]
     }
   },
   "type": "STATE",
-  "asset-table": {},
+  "asset-table": {
+    "0": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "user",
+      "sprite": "0"
+    },
+    "1": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "chair",
+      "sprite": "0"
+    }
+  },
   "prefab-table": {}
 }

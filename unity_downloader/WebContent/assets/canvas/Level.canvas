@@ -18,8 +18,7 @@
       200,
       200
     ],
-    "showGrid": true,
-    "create_after": "_router_1.inputEnabled = true;\n_router_1.input.enableDrag();"
+    "showGrid": true
   },
   "stateSettings": {
     "scaleMode": "SHOW_ALL",
@@ -41,61 +40,10 @@
     "info": {
       "editorName": "Level",
       "setAll": [],
-      "children": [
-        {
-          "type": "spritesheet",
-          "id": "f806ae3f-06e9-4902-acf7-29e6ddd05ae9",
-          "asset": "0",
-          "info": {
-            "editorName": "user",
-            "x": 202,
-            "y": 366
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "66cb8db4-c09f-49b0-a2d0-48ca07b0e343",
-          "asset": "1",
-          "info": {
-            "editorName": "chair",
-            "x": 202,
-            "y": 464
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "0634badf-34a3-4986-af57-21807b480af7",
-          "asset": "2",
-          "info": {
-            "editorName": "router_1",
-            "editorPublic": true,
-            "x": 192,
-            "y": 207
-          }
-        }
-      ]
+      "children": []
     }
   },
   "type": "STATE",
-  "asset-table": {
-    "0": {
-      "file": "WebContent/assets/pack.json",
-      "section": "level",
-      "asset": "user",
-      "sprite": "0"
-    },
-    "1": {
-      "file": "WebContent/assets/pack.json",
-      "section": "level",
-      "asset": "chair",
-      "sprite": "0"
-    },
-    "2": {
-      "file": "WebContent/assets/pack.json",
-      "section": "level",
-      "asset": "wifi",
-      "sprite": "0"
-    }
-  },
+  "asset-table": {},
   "prefab-table": {}
 }

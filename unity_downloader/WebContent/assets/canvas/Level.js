@@ -31,24 +31,9 @@ Level.prototype.init = function () {
 
 Level.prototype.preload = function () {
 	
-	this.load.pack('level', 'assets/pack.json');
-	
 };
 
 Level.prototype.create = function () {
-	this.add.sprite(202, 366, 'user', 0);
-	
-	this.add.sprite(202, 464, 'chair', 0);
-	
-	var _router_1 = this.add.sprite(192, 207, 'wifi', 0);
-	
-	
-	
-	// public fields
-	
-	this.fRouter_1 = _router_1;
-	_router_1.inputEnabled = true;
-	_router_1.input.enableDrag();
 	
 };
 

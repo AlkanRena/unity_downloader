@@ -69,10 +69,17 @@
       "frameMax": 0,
       "margin": 1,
       "spacing": 0
+    },
+    {
+      "type": "atlas",
+      "key": "menu_buttons",
+      "textureURL": "assets/menu_buttons.png",
+      "atlasURL": "assets/menu_buttons.json",
+      "format": "TEXTURE_ATLAS_JSON_HASH"
     }
   ],
   "meta": {
-    "generated": "1517004188276",
+    "generated": "1517006998209",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

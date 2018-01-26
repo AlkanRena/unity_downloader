@@ -50,8 +50,8 @@ Level.prototype.create = function () {
 
 Level.prototype.update = function () {
 	if (this.input.activePointer.leftButton.isDown) {
-		var pos_X = this.input.mouse.event.screenX;
-		var pos_Y = this.input.mouse.event.screenY;
+		var pos_X = this.input.mouse.event.offsetX;
+		var pos_Y = this.input.mouse.event.offsetY;
 		console.log(this.input.mouse.event);
 		this.add.sprite(pos_X, pos_Y, 'wifi', 0);
 	}

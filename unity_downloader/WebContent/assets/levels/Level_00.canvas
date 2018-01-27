@@ -19,7 +19,7 @@
       200
     ],
     "showGrid": true,
-    "create_after": "    cashUI = this.add.bitmapText(10, 10, 'nesfont','Bitmap Fonts!',64);",
+    "create_after": "this.add.sprite(0, 0, 'cashBar');\r\nvar gfx = this.add.graphics(10,20);\r\ngfx.lineStyle(20, 0x7FFF00, 0.8);\r\ncashLine = gfx.lineTo(40,0);\r\ncashUI = this.add.bitmapText(46, 14, 'nesfont',cash + \"/\" + maxCash,64);",
     "state_init_after": "cash = 40;",
     "state_preload_after": "this.load.bitmapFont('nesfont', 'assets/fonts/nesfont.png', 'assets/fonts/nesfont.xml');"
   },
@@ -43,26 +43,41 @@
     "info": {
       "editorName": "Level",
       "setAll": [],
-      "children": [{
-        "type": "button",
-        "id": "cb3daa93-77f7-4ed0-a764-3ce8c0079b68",
-        "asset": "0",
-        "info": {
-          "editorName": "add_router",
-          "editorPublic": true,
-          "x": 735,
-          "y": 162,
-          "callback": "Level.prototype.addRouter"
+      "children": [
+        {
+          "type": "button",
+          "id": "cb3daa93-77f7-4ed0-a764-3ce8c0079b68",
+          "asset": "0",
+          "info": {
+            "editorName": "add_router",
+            "editorPublic": true,
+            "x": 735,
+            "y": 162,
+            "callback": "Level.prototype.addRouter"
+          }
+        },
+        {
+          "type": "image",
+          "id": "21f793f8-d33e-4c20-8824-aa1dfcbeaac7",
+          "asset": "1",
+          "info": {"editorName": "cashBar"}
         }
-      }]
+      ]
     }
   },
   "type": "STATE",
-  "asset-table": {"0": {
-    "file": "WebContent/assets/pack.json",
-    "section": "level",
-    "asset": "socials",
-    "sprite": "addthis.png"
-  }},
+  "asset-table": {
+    "0": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "socials",
+      "sprite": "addthis.png"
+    },
+    "1": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "cashBar"
+    }
+  },
   "prefab-table": {}
 }

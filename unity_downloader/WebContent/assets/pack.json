@@ -3,14 +3,14 @@
     {
       "type": "atlas",
       "key": "socials",
-      "textureURL": "assets/socials.png",
-      "atlasURL": "assets/socials.json",
+      "textureURL": "assets/gfx/socials.png",
+      "atlasURL": "assets/gfx/socials.json",
       "format": "TEXTURE_ATLAS_JSON_HASH"
     },
     {
       "type": "spritesheet",
       "key": "chair",
-      "url": "assets/chair.png",
+      "url": "assets/gfx/chair.png",
       "frameWidth": 32,
       "frameHeight": 32,
       "frameMax": -1,
@@ -20,7 +20,7 @@
     {
       "type": "spritesheet",
       "key": "user",
-      "url": "assets/user.png",
+      "url": "assets/gfx/user.png",
       "frameWidth": 32,
       "frameHeight": 32,
       "frameMax": -1,
@@ -30,7 +30,7 @@
     {
       "type": "spritesheet",
       "key": "wifi",
-      "url": "assets/wifi.png",
+      "url": "assets/gfx/wifi.png",
       "frameWidth": 32,
       "frameHeight": 32,
       "frameMax": -1,
@@ -40,14 +40,14 @@
     {
       "type": "atlas",
       "key": "menu_buttons",
-      "textureURL": "assets/menu_buttons.png",
-      "atlasURL": "assets/menu_buttons.json",
+      "textureURL": "assets/gfx/menu_buttons.png",
+      "atlasURL": "assets/gfx/menu_buttons.json",
       "format": "TEXTURE_ATLAS_JSON_HASH"
     },
     {
       "type": "spritesheet",
       "key": "floor",
-      "url": "assets/floor.png",
+      "url": "assets/gfx/floor.png",
       "frameWidth": 32,
       "frameHeight": 32,
       "frameMax": -1,
@@ -57,7 +57,7 @@
     {
       "type": "spritesheet",
       "key": "pop_up",
-      "url": "assets/pop_up.png",
+      "url": "assets/gfx/pop_up.png",
       "frameWidth": 16,
       "frameHeight": 16,
       "frameMax": -1,
@@ -67,7 +67,7 @@
     {
       "type": "spritesheet",
       "key": "ui_icons",
-      "url": "assets/ui_icons.png",
+      "url": "assets/gfx/ui_icons.png",
       "frameWidth": 16,
       "frameHeight": 16,
       "frameMax": -1,
@@ -77,7 +77,7 @@
     {
       "type": "spritesheet",
       "key": "healer_f",
-      "url": "assets/healer_f.png",
+      "url": "assets/gfx/healer_f.png",
       "frameWidth": 32,
       "frameHeight": 36,
       "frameMax": -1,
@@ -87,7 +87,7 @@
     {
       "type": "spritesheet",
       "key": "healer_m",
-      "url": "assets/healer_m.png",
+      "url": "assets/gfx/healer_m.png",
       "frameWidth": 32,
       "frameHeight": 36,
       "frameMax": -1,
@@ -97,7 +97,7 @@
     {
       "type": "spritesheet",
       "key": "mage_f",
-      "url": "assets/mage_f.png",
+      "url": "assets/gfx/mage_f.png",
       "frameWidth": 32,
       "frameHeight": 36,
       "frameMax": -1,
@@ -107,7 +107,7 @@
     {
       "type": "spritesheet",
       "key": "mage_m",
-      "url": "assets/mage_m.png",
+      "url": "assets/gfx/mage_m.png",
       "frameWidth": 32,
       "frameHeight": 36,
       "frameMax": -1,
@@ -117,7 +117,7 @@
     {
       "type": "spritesheet",
       "key": "ninja_f",
-      "url": "assets/ninja_f.png",
+      "url": "assets/gfx/ninja_f.png",
       "frameWidth": 32,
       "frameHeight": 36,
       "frameMax": -1,
@@ -127,7 +127,7 @@
     {
       "type": "spritesheet",
       "key": "ninja_m",
-      "url": "assets/ninja_m.png",
+      "url": "assets/gfx/ninja_m.png",
       "frameWidth": 32,
       "frameHeight": 36,
       "frameMax": -1,
@@ -137,7 +137,7 @@
     {
       "type": "spritesheet",
       "key": "ranger_f",
-      "url": "assets/ranger_f.png",
+      "url": "assets/gfx/ranger_f.png",
       "frameWidth": 32,
       "frameHeight": 36,
       "frameMax": -1,
@@ -147,7 +147,7 @@
     {
       "type": "spritesheet",
       "key": "ranger_m",
-      "url": "assets/ranger_m.png",
+      "url": "assets/gfx/ranger_m.png",
       "frameWidth": 32,
       "frameHeight": 36,
       "frameMax": -1,
@@ -157,7 +157,7 @@
     {
       "type": "spritesheet",
       "key": "townfolk1_f",
-      "url": "assets/townfolk1_f.png",
+      "url": "assets/gfx/townfolk1_f.png",
       "frameWidth": 32,
       "frameHeight": 36,
       "frameMax": -1,
@@ -167,7 +167,7 @@
     {
       "type": "spritesheet",
       "key": "townfolk1_m",
-      "url": "assets/townfolk1_m.png",
+      "url": "assets/gfx/townfolk1_m.png",
       "frameWidth": 32,
       "frameHeight": 36,
       "frameMax": -1,
@@ -177,7 +177,7 @@
     {
       "type": "spritesheet",
       "key": "warrior_f",
-      "url": "assets/warrior_f.png",
+      "url": "assets/gfx/warrior_f.png",
       "frameWidth": 32,
       "frameHeight": 36,
       "frameMax": -1,
@@ -187,7 +187,7 @@
     {
       "type": "spritesheet",
       "key": "warrior_m",
-      "url": "assets/warrior_m.png",
+      "url": "assets/gfx/warrior_m.png",
       "frameWidth": 32,
       "frameHeight": 36,
       "frameMax": -1,
@@ -197,7 +197,7 @@
     {
       "type": "spritesheet",
       "key": "heart",
-      "url": "assets/Sprite Sheet.png",
+      "url": "assets/gfx/Sprite Sheet.png",
       "frameWidth": 37,
       "frameHeight": 32,
       "frameMax": -1,
@@ -207,7 +207,7 @@
     {
       "type": "spritesheet",
       "key": "stol",
-      "url": "assets/stol2.png",
+      "url": "assets/gfx/stol2.png",
       "frameWidth": 68,
       "frameHeight": 48,
       "frameMax": -1,
@@ -217,7 +217,7 @@
     {
       "type": "spritesheet",
       "key": "krzeslo",
-      "url": "assets/krzeslo1_17x20.png",
+      "url": "assets/gfx/krzeslo1_17x20.png",
       "frameWidth": 20,
       "frameHeight": 20,
       "frameMax": -1,
@@ -227,7 +227,7 @@
     {
       "type": "spritesheet",
       "key": "krzeslo1",
-      "url": "assets/krzeslo3_17x28.png",
+      "url": "assets/gfx/krzeslo3_17x28.png",
       "frameWidth": 20,
       "frameHeight": 28,
       "frameMax": -1,
@@ -237,7 +237,7 @@
     {
       "type": "spritesheet",
       "key": "krzeslo2_17x28",
-      "url": "assets/krzeslo2_17x28.png",
+      "url": "assets/gfx/krzeslo2_17x28.png",
       "frameWidth": 17,
       "frameHeight": 28,
       "frameMax": -1,

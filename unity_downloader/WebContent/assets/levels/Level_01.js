@@ -27,7 +27,9 @@ var score;
 var cash;
 var maxCash = 200;
 var cashUI;
-var cashLine
+var cashLine;
+
+var upgradeCost=50;
 
 
 
@@ -61,55 +63,23 @@ Level_01.prototype.init = function () {
 };
 
 Level_01.prototype.preload = function () {
-	
 	this.load.pack('level', 'assets/pack.json');
-	
 	this.load.bitmapFont('nesfont', 'assets/fonts/nesfont.png', 'assets/fonts/nesfont.xml');
-	
 };
 
 Level_01.prototype.create = function () {
 	var _floor = this.add.tileSprite(224, 160, 800, 600, 'floor', 3);
 	_floor.scale.setTo(0.5, 0.5);
-	
-	this.add.sprite(336, 272, 'krzeslo', 0);
-	
-	this.add.sprite(320, 272, 'krzeslo', 0);
-	
-	this.add.sprite(320, 208, 'krzeslo2_17x28', 0);
-	
-	this.add.sprite(336, 208, 'krzeslo2_17x28', 0);
+
+	for(var i = 0; i< places.length; i++){
+		var place = places[i];
+		console.log(place.x, place.y);
+		this.add.sprite(place.x, place.y, 'krzeslo', 0);
+	}
 	
 	this.add.sprite(304, 224, 'stol', 0);
-	
-	this.add.sprite(512, 272, 'krzeslo', 0);
-	
-	this.add.sprite(496, 272, 'krzeslo', 0);
-	
-	this.add.sprite(496, 208, 'krzeslo2_17x28', 0);
-	
-	this.add.sprite(512, 208, 'krzeslo2_17x28', 0);
-	
 	this.add.sprite(480, 224, 'stol', 0);
-	
-	this.add.sprite(336, 400, 'krzeslo', 0);
-	
-	this.add.sprite(320, 400, 'krzeslo', 0);
-	
-	this.add.sprite(320, 336, 'krzeslo2_17x28', 0);
-	
-	this.add.sprite(336, 336, 'krzeslo2_17x28', 0);
-	
 	this.add.sprite(304, 352, 'stol', 0);
-	
-	this.add.sprite(512, 400, 'krzeslo', 0);
-	
-	this.add.sprite(496, 400, 'krzeslo', 0);
-	
-	this.add.sprite(496, 336, 'krzeslo2_17x28', 0);
-	
-	this.add.sprite(512, 336, 'krzeslo2_17x28', 0);
-	
 	this.add.sprite(480, 352, 'stol', 0);
 	
 	var _lvl_choice = this.add.sprite(-816, -288, 'lvl_choice');

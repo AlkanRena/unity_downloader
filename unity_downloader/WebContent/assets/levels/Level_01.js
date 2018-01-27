@@ -263,8 +263,8 @@ Level_01.prototype.addRouter = function () {
 	}
 	cash -= 20;
 
-	var _wifi = this.add.sprite(250, 5, "wifi");
-	_wifi.animations.add('beep', [0,1,2,3,4], 3, true);
+	var _wifi = this.add.sprite(250, 5, "wifi_z");
+	_wifi.animations.add('beep', [0,1,2,3,4,5,6], 3, true);
 	_wifi.animations.play('beep');
 	_wifi.inputEnabled = true;
 	_wifi.input.enableDrag();

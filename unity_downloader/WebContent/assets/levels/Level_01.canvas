@@ -19,7 +19,7 @@
       200
     ],
     "showGrid": true,
-    "create_after": "this.time.events.add(Phaser.Timer.SECOND * 1, this.add_ninja_f, this);"
+    "create_after": "this.time.events.repeat(Phaser.Timer.SECOND * 2, 6, this.add_random_people, this);"
   },
   "stateSettings": {
     "pageAlignHorizontally": true,
@@ -258,6 +258,17 @@
             "x": 474,
             "y": 229
           }
+        },
+        {
+          "type": "spritesheet",
+          "id": "bc3a5c82-d7bd-4bf1-b288-877da4767112",
+          "asset": "5",
+          "info": {
+            "editorName": "healer_f",
+            "x": 613,
+            "y": 117,
+            "data": "{\n\"something\": true\n}"
+          }
         }
       ]
     }
@@ -292,6 +303,12 @@
       "file": "WebContent/assets/pack.json",
       "section": "level",
       "asset": "stol",
+      "sprite": "0"
+    },
+    "5": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "healer_f",
       "sprite": "0"
     }
   },

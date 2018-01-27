@@ -73,10 +73,140 @@
       "frameMax": -1,
       "margin": 1,
       "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "healer_f",
+      "url": "assets/healer_f.png",
+      "frameWidth": 32,
+      "frameHeight": 36,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "healer_m",
+      "url": "assets/healer_m.png",
+      "frameWidth": 32,
+      "frameHeight": 36,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "mage_f",
+      "url": "assets/mage_f.png",
+      "frameWidth": 32,
+      "frameHeight": 36,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "mage_m",
+      "url": "assets/mage_m.png",
+      "frameWidth": 32,
+      "frameHeight": 36,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "ninja_f",
+      "url": "assets/ninja_f.png",
+      "frameWidth": 32,
+      "frameHeight": 36,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "ninja_m",
+      "url": "assets/ninja_m.png",
+      "frameWidth": 32,
+      "frameHeight": 36,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "ranger_f",
+      "url": "assets/ranger_f.png",
+      "frameWidth": 32,
+      "frameHeight": 36,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "ranger_m",
+      "url": "assets/ranger_m.png",
+      "frameWidth": 32,
+      "frameHeight": 36,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "townfolk1_f",
+      "url": "assets/townfolk1_f.png",
+      "frameWidth": 32,
+      "frameHeight": 36,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "townfolk1_m",
+      "url": "assets/townfolk1_m.png",
+      "frameWidth": 32,
+      "frameHeight": 36,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "warrior_f",
+      "url": "assets/warrior_f.png",
+      "frameWidth": 32,
+      "frameHeight": 36,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "warrior_m",
+      "url": "assets/warrior_m.png",
+      "frameWidth": 32,
+      "frameHeight": 36,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "heart",
+      "url": "assets/Sprite Sheet.png",
+      "frameWidth": 37,
+      "frameHeight": 32,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
     }
   ],
   "meta": {
-    "generated": "1517012239217",
+    "generated": "1517043997023",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

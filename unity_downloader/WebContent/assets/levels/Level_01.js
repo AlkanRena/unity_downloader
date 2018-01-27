@@ -267,6 +267,8 @@ Level_01.prototype.addRouter = function () {
 	_wifi.data.level = 0;
 	_wifi.data.range = 10;
 	_wifi.data.transfer = 10;
+	_wifi.events.onInputUp.add(Level_01.prototype.upgreade,this);
+
 	this.fwifi = _wifi;
 };
 
@@ -275,3 +277,32 @@ Level_01.prototype.SpriteDraged = function (dragedObj) {
 }
 
 
+Level_01.prototype.upgreade = function listener (sprite, pointer) {
+	if (sprite.data.level != 4){
+		switch(sprite.data.level) {
+	    case 0:
+	        sprite.data.level = 1;
+	        sprite.data.range = 15;
+	        sprite.data.transfer = 20;
+	        cash -= 40;
+	        break;
+	    case 1:
+	        sprite.data.level = 2;
+	        sprite.data.range = 15;
+	        sprite.data.transfer = 20;
+	       	cash -= 80;
+	        break;
+	    case 2:
+	        sprite.data.level = 3;
+	        sprite.data.range = 20;
+	        sprite.data.transfer = 40;
+	        cash -= 120; 
+	        break;
+	    case 3:
+	        sprite.data.level = 4;
+	        sprite.data.range = 25;
+	        sprite.data.transfer = 80;
+	        cash -= 160;
+		}
+	}
+}

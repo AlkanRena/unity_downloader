@@ -262,7 +262,7 @@ Level_01.prototype.addRouter = function () {
 		return false;
 	}
 	cash -= 20;
-
+	
 	var _wifi = this.add.sprite(250, 5, "wifi_z");
 	_wifi.animations.add('beep', [0,1,2,3,4,5,6], 3, true);
 	_wifi.animations.play('beep');
@@ -272,8 +272,20 @@ Level_01.prototype.addRouter = function () {
 	_wifi.data.range = 10;
 	_wifi.data.transfer = 10;
 	_wifi.events.onInputUp.add(Level_01.prototype.upgreade,this);
-
+	
 	this.fwifi = _wifi;
+
+	 if(_wifi.data.level == 1){
+		_wifi = this.add.sprite(250, 5, "wifi_zz");
+		_wifi.animations.add('beep', [0,1,2,3,4,5,6], 3, true);
+	} else if(_wifi.data.level == 2){
+		_wifi = this.add.sprite(250, 5, "wifi_zzn");
+		_wifi.animations.add('beep', [0,1,2,3,4,5,6,7,8], 3, true)
+	} else if(_wifi.data.level == 3){
+		_wifi = this.add.sprite(250, 5, "wifi_zznc");
+		_wifi.animations.add('beep', [4,5,0,2,3,1,6,7,8], 4, true);
+	}
+	_wifi.animations.play('beep');
 };
 
 Level_01.prototype.SpriteDraged = function (dragedObj) {

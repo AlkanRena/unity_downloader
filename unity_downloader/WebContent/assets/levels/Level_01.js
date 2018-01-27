@@ -39,6 +39,7 @@ Level_01.prototype.init = function () {
 Level_01.prototype.preload = function () {
 	
 	this.load.pack('level', 'assets/pack.json');
+	this.load.image('lvl_choice', 'assets/menu/choice_menu.png')
 	
 };
 
@@ -97,6 +98,81 @@ Level_01.prototype.create = function () {
 	
 	
 	this.time.events.repeat(Phaser.Timer.SECOND * 2, 6, this.add_random_people, this);
+	
+	 /*
+    Code for the pause menu
+*/
+var w = 800, h=600;
+// Create a label to use as a button
+pause_label = game.add.text(w - 100, 20, 'Pause', { font: '24px Arial', fill: '#fff' });
+pause_label.inputEnabled = true;
+pause_label.events.onInputUp.add(function () {
+    // When the paus button is pressed, we pause the game
+    game.paused = true;
+
+    // Then add the menu
+    lvl_choice = game.add.sprite(w/2, h/2, 'lvl_choice');
+    lvl_choice.anchor.setTo(0.5, 0.5);
+
+    // And a label to illustrate which menu item was chosen. (This is not necessary)
+    choiseLabel = game.add.text(w/2, h-150, 'Click outside menu to continue', { font: '30px Arial', fill: '#fff' });
+    choiseLabel.anchor.setTo(0.5, 0.5);
+});
+
+// Add a input listener that can help us return from being paused
+game.input.onDown.add(unpause, self);
+
+// And finally the method that handels the pause menu
+function unpause(event){
+    // Only act if paused
+    if(game.paused){
+        // Calculate the corners of the menu
+        var x1 = w/2 - 150/2, x2 = w/2 + 150/2,
+            y1 = h/2 - 50/2, y2 = h/2 + 50/2;
+
+        // Check if the click was inside the menu
+        if(event.x > x1 && event.x < x2 && event.y > y1 && event.y < y2 ){
+            // The choicemap is an array that will help us see which item was clicked
+            var choisemap = ['one', 'two', 'three'];
+
+            // Get menu local coordinates for the click
+            var x = event.x - x1,
+                y = event.y - y1;
+
+            // Calculate the choice 
+            var choise = Math.floor(x / 50) + 3*Math.floor(y / 50);
+
+            // Display the choice
+            choiseLabel.text = 'You chose menu item: ' + choisemap[choise];
+            console.log(choise);
+            
+            if(choise == 0){
+            	game.state.start('Level_00');
+            	lvl_choice.destroy();
+                choiseLabel.destroy();
+                game.paused = false;
+            } else if (choise == 1){
+            	game.state.start('Level_01');
+            	lvl_choice.destroy();
+                choiseLabel.destroy();
+                game.paused = false;
+            } else {
+            	game.state.start('Level_02');
+            	lvl_choice.destroy();
+                choiseLabel.destroy();
+                game.paused = false;
+            }
+        }
+        else{
+            // Remove the menu and the label
+        	lvl_choice.destroy();
+            choiseLabel.destroy();
+
+            // Unpause the game
+            game.paused = false;
+        }
+    }
+}
 	
 };
 

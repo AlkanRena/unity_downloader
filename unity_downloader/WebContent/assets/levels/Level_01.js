@@ -23,6 +23,13 @@ var position;
 
 var random_number;
 
+var score;
+var cash;
+var maxCash = 200;
+var cashUI;
+var cashLine
+
+
 
 /* --- start generated code --- */
 
@@ -49,12 +56,15 @@ Level_01.prototype.init = function () {
 	this.scale.pageAlignVertically = true;
 	
 	this.sprites=[];
+	cash = 40;
 	
 };
 
 Level_01.prototype.preload = function () {
 	
 	this.load.pack('level', 'assets/pack.json');
+	
+	this.load.bitmapFont('nesfont', 'assets/fonts/nesfont.png', 'assets/fonts/nesfont.xml');
 	
 };
 
@@ -104,11 +114,14 @@ Level_01.prototype.create = function () {
 	
 	var _lvl_choice = this.add.sprite(-816, -288, 'lvl_choice');
 	
+	var __add_router = this.add.button(624, 160, 'socials', Level_01.prototype.addRouter, this, null, 'addthis.png', null, null);
+	
 	
 	
 	// public fields
 	
 	this.fLvl_choice = _lvl_choice;
+	this.f_add_router = __add_router;
 	this.time.events.repeat(Phaser.Timer.SECOND * 1, 6, this.add_random_people, this);
 	this.add_random_people();
 	
@@ -154,7 +167,6 @@ Level_01.prototype.create = function () {
 	
 	            // Display the choice
 	            choiseLabel.text = 'You chose menu item: ' + choisemap[choise];
-	            console.log(choise);
 	            
 	            if(choise == 0){
 	            	game.state.start('Level');
@@ -184,13 +196,29 @@ Level_01.prototype.create = function () {
 	    }
 	}
 	
+	
+		this.add.sprite(0, 0, 'cashBar');
+		var gfx = this.add.graphics(10,20);
+		gfx.lineStyle(20, 0x7FFF00, 0.8);
+		cashLine = gfx.lineTo(40,0);
+		cashUI = this.add.bitmapText(46, 14, 'nesfont',cash + "/" + maxCash,64);
+	
 };
 
 /* --- end generated code --- */
 // -- user code here --
 
 Level_01.prototype.update = function () {
-		
+	if (typeof this.fwifi !== 'undefined' && this.fwifi.input.isDragged) {
+		Level.prototype.SpriteDraged(this.fwifi);
+	}
+    if(Math.random()*20>16 &&cash<maxCash)
+		cash+=1;
+
+
+    var line = cash/maxCash*400;
+    cashLine.width=line;
+    cashUI.setText(cash + "/" + maxCash);
 };
 
 Level_01.prototype.add_random_people = function add_random_people() {
@@ -202,8 +230,10 @@ Level_01.prototype.add_random_people = function add_random_people() {
         sprite.animations.add('walk_left', [9, 10, 11], 4, true);
         sprite.animations.add('walk_up', [0, 1, 2], 4, true);
         sprite.animations.add('walk_down', [6, 7, 8], 4, true);
+        sprite.data.id_router = null;
+        sprite.data.happiness = 50;
+        sprite.data.action = 100;
         this.sprites.push(sprite);
-        console.log(this.sprites);
     };
 
 	position = Math.floor(Math.random()*places.length);
@@ -222,5 +252,20 @@ Level_01.prototype.add_random_people = function add_random_people() {
 	
 
 };
+
+Level_01.prototype.addRouter = function () {
+	if (cash < 19) {
+		return false;
+	}
+	cash -= 20;
+	var _wifi = this.add.sprite(0, 0, 'wifi');
+	_wifi.inputEnabled = true;
+	_wifi.input.enableDrag();
+	this.fwifi = _wifi;
+};
+
+Level_01.prototype.SpriteDraged = function (dragedObj) {
+	//puste pod wyłączenie i włączenie wifi 
+}
 
 

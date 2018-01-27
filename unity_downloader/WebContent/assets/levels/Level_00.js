@@ -3,6 +3,7 @@
 
 var score;
 var cash;
+var baba;
 
 
 /* --- start generated code --- */
@@ -32,6 +33,7 @@ Level.prototype.init = function () {
 	this.stage.backgroundColor = '#bfbfbf';
 	
 	cash = 40;
+//    var baba = 50;
 	
 };
 
@@ -60,13 +62,15 @@ Level.prototype.update = function () {
 	
 	if (typeof this.fwifi !== 'undefined' && this.fwifi.input.isDragged) {
 		Level.prototype.SpriteDraged(this.fwifi);
-	} 
+	}
+
 };
 
 Level.prototype.addRouter = function () {
 	if (cash < 19) {
 		return false;
 	}
+    console.log(baba);
 	cash -= 20;
 	var _wifi = this.add.sprite(0, 0, 'wifi');
 	_wifi.inputEnabled = true;

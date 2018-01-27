@@ -243,10 +243,16 @@
       "frameMax": -1,
       "margin": 0,
       "spacing": 0
+    },
+    {
+      "type": "image",
+      "key": "cashBar",
+      "url": "assets/gfx/cashBar.png",
+      "overwrite": false
     }
   ],
   "meta": {
-    "generated": "1517048152040",
+    "generated": "1517063621748",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

@@ -27,8 +27,7 @@ var score;
 var cash;
 var maxCash = 200;
 var cashUI;
-var cashLine;
-var upgradeCost=50;
+var cashLine
 
 
 
@@ -38,20 +37,20 @@ var upgradeCost=50;
 
 
 /**
- * Level_01.
+ * Level_02.
  */
-function Level_01() {
+function Level_02() {
 	
 	Phaser.State.call(this);
 	
 }
 
 /** @type Phaser.State */
-var Level_01_proto = Object.create(Phaser.State.prototype);
-Level_01.prototype = Level_01_proto;
-Level_01.prototype.constructor = Level_01;
+var Level_02_proto = Object.create(Phaser.State.prototype);
+Level_02.prototype = Level_02_proto;
+Level_02.prototype.constructor = Level_02;
 
-Level_01.prototype.init = function () {
+Level_02.prototype.init = function () {
 	
 	this.scale.pageAlignHorizontally = true;
 	this.scale.pageAlignVertically = true;
@@ -61,29 +60,61 @@ Level_01.prototype.init = function () {
 	
 };
 
-Level_01.prototype.preload = function () {
+Level_02.prototype.preload = function () {
+	
 	this.load.pack('level', 'assets/pack.json');
+	
 	this.load.bitmapFont('nesfont', 'assets/fonts/nesfont.png', 'assets/fonts/nesfont.xml');
+	
 };
 
-Level_01.prototype.create = function () {
+Level_02.prototype.create = function () {
 	var _floor = this.add.tileSprite(224, 160, 800, 600, 'floor', 3);
 	_floor.scale.setTo(0.5, 0.5);
-
-	for(var i = 0; i< places.length; i++){
-		var place = places[i];
-		console.log(place.x, place.y);
-		this.add.sprite(place.x, place.y, 'krzeslo', 0);
-	}
-
+	
+	this.add.sprite(336, 272, 'krzeslo', 0);
+	
+	this.add.sprite(320, 272, 'krzeslo', 0);
+	
+	this.add.sprite(320, 208, 'krzeslo2_17x28', 0);
+	
+	this.add.sprite(336, 208, 'krzeslo2_17x28', 0);
+	
 	this.add.sprite(304, 224, 'stol', 0);
+	
+	this.add.sprite(512, 272, 'krzeslo', 0);
+	
+	this.add.sprite(496, 272, 'krzeslo', 0);
+	
+	this.add.sprite(496, 208, 'krzeslo2_17x28', 0);
+	
+	this.add.sprite(512, 208, 'krzeslo2_17x28', 0);
+	
 	this.add.sprite(480, 224, 'stol', 0);
+	
+	this.add.sprite(336, 400, 'krzeslo', 0);
+	
+	this.add.sprite(320, 400, 'krzeslo', 0);
+	
+	this.add.sprite(320, 336, 'krzeslo2_17x28', 0);
+	
+	this.add.sprite(336, 336, 'krzeslo2_17x28', 0);
+	
 	this.add.sprite(304, 352, 'stol', 0);
+	
+	this.add.sprite(512, 400, 'krzeslo', 0);
+	
+	this.add.sprite(496, 400, 'krzeslo', 0);
+	
+	this.add.sprite(496, 336, 'krzeslo2_17x28', 0);
+	
+	this.add.sprite(512, 336, 'krzeslo2_17x28', 0);
+	
 	this.add.sprite(480, 352, 'stol', 0);
 	
 	var _lvl_choice = this.add.sprite(-816, -288, 'lvl_choice');
 	
-	var __add_router = this.add.button(624, 160, 'socials', Level_01.prototype.addRouter, this, null, 'addthis.png', null, null);
+	var __add_router = this.add.button(624, 160, 'socials', Level_02.prototype.addRouter, this, null, 'addthis.png', null, null);
 	
 	
 	
@@ -95,14 +126,12 @@ Level_01.prototype.create = function () {
 	gfx.lineStyle(20, 0x7FFF00, 0.8);
 	cashLine = gfx.lineTo(40,0);
 	cashUI = this.add.bitmapText(46, 14, 'nesfont',cash + "/" + maxCash,64);
-
+	
 	this.fLvl_choice = _lvl_choice;
 	this.f_add_router = __add_router;
 	this.time.events.repeat(Phaser.Timer.SECOND * 1, 6, this.add_random_people, this);
 	this.add_random_people();
-	if (this.sprites.length != 0) {
-		game.time.events.loop(Phaser.Timer.SECOND * 2, Level_01.prototype.smoke, this);
-	}
+	
 	var w = 800, h=600;
 	// Create a label to use as a button
 	pause_label = game.add.text(w - 80, 10, 'Pause', { font: '24px Arial', fill: '#fff' });
@@ -147,7 +176,7 @@ Level_01.prototype.create = function () {
 	            choiseLabel.text = 'You chose menu item: ' + choisemap[choise];
 	            
 	            if(choise == 0){
-	            	game.state.start('Level');
+	            	game.state.start('Level_00');
 	            	lvl_choice.destroy();
 	                choiseLabel.destroy();
 	                game.paused = false;
@@ -174,14 +203,14 @@ Level_01.prototype.create = function () {
 	    }
 	}
 	
-
+	
 	
 };
 
 /* --- end generated code --- */
 // -- user code here --
 
-Level_01.prototype.update = function () {
+Level_02.prototype.update = function () {
 	if (typeof this.fwifi !== 'undefined' && this.fwifi.input.isDragged) {
 		Level.prototype.SpriteDraged(this.fwifi);
 	}
@@ -194,7 +223,7 @@ Level_01.prototype.update = function () {
     cashUI.setText(cash + "/" + maxCash);
 };
 
-Level_01.prototype.add_random_people = function add_random_people() {
+Level_02.prototype.add_random_people = function add_random_people() {
 
 
     this.add_sprite = function(x, y, sprite_name){
@@ -215,7 +244,7 @@ Level_01.prototype.add_random_people = function add_random_people() {
 		var place = places[position];
 		place.x = place.x - 12;
 		place.y = place.y - 16;
-		var sprite_names = ["ninja_f","ninja_m","warrior_m","townfolk1_f","ranger_f","ranger_m"];
+		var sprite_names = ["ninja_f","ninja_m","warrior_m","warrior_f","ranger_f","ranger_m"];
 		this.add_sprite(place.x, place.y,sprite_names[random_number]);
 		places.splice(position, 1);
 	} else {
@@ -226,21 +255,7 @@ Level_01.prototype.add_random_people = function add_random_people() {
 
 };
 
-Level_01.prototype.smoke = function () {
-	var _smoke_above_user = null;
-	if (_smoke_above_user != null) {
-		_smoke_above_user.remove(sprite, true);
-	};
-	random_number = Math.floor(Math.random()*this.sprites.length);
-	var smoke_above = this.sprites[random_number];
-	_smoke_above_user = this.add.sprite(smoke_above.position.x + 5, smoke_above.position.y - 5, "pop_up", 0);
-	_smoke_above_user.animations.add('alert_smoke', [0, 1, 2, 1, 0], 5, false);
-
-	_smoke_above_user.animations.play('alert_smoke', 5, false, true);
-
-};
-
-Level_01.prototype.addRouter = function () {
+Level_02.prototype.addRouter = function () {
 	if (cash < 19) {
 		return false;
 	}
@@ -254,17 +269,17 @@ Level_01.prototype.addRouter = function () {
 	_wifi.data.level = 0;
 	_wifi.data.range = 10;
 	_wifi.data.transfer = 10;
-	_wifi.events.onInputUp.add(Level_01.prototype.upgreade,this);
+	_wifi.events.onInputUp.add(Level_02.prototype.upgreade,this);
 
 	this.fwifi = _wifi;
 };
 
-Level_01.prototype.SpriteDraged = function (dragedObj) {
+Level_02.prototype.SpriteDraged = function (dragedObj) {
 	//puste pod wyłączenie i włączenie wifi 
-};
+}
 
 
-Level_01.prototype.upgreade = function listener (sprite, pointer) {
+Level_02.prototype.upgreade = function listener (sprite, pointer) {
 	if (sprite.data.level != 4){
 		switch(sprite.data.level) {
 	    case 0:
@@ -292,4 +307,4 @@ Level_01.prototype.upgreade = function listener (sprite, pointer) {
 	        cash -= 160;
 		}
 	}
-};
+}

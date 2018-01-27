@@ -242,10 +242,38 @@
       "textureURL": "assets/gfx/socials.png",
       "atlasURL": "assets/gfx/socials.json",
       "format": "TEXTURE_ATLAS_JSON_HASH"
+    },
+    {
+      "type": "atlas",
+      "key": "wifi_z",
+      "textureURL": "assets/gfx/wifi_z.png",
+      "atlasURL": "assets/gfx/wifi_z.json",
+      "format": "TEXTURE_ATLAS_JSON_HASH"
+    },
+    {
+      "type": "atlas",
+      "key": "wifi_zz",
+      "textureURL": "assets/gfx/wifi_zz.png",
+      "atlasURL": "assets/gfx/wifi_zz.json",
+      "format": "TEXTURE_ATLAS_JSON_HASH"
+    },
+    {
+      "type": "atlas",
+      "key": "wifi_zzn",
+      "textureURL": "assets/gfx/wifi_zzn.png",
+      "atlasURL": "assets/gfx/wifi_zzn.json",
+      "format": "TEXTURE_ATLAS_JSON_HASH"
+    },
+    {
+      "type": "atlas",
+      "key": "wifi_zznc",
+      "textureURL": "assets/gfx/wifi_zznc.png",
+      "atlasURL": "assets/gfx/wifi_zznc.json",
+      "format": "TEXTURE_ATLAS_JSON_HASH"
     }
   ],
   "meta": {
-    "generated": "1517076246834",
+    "generated": "1517090231578",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

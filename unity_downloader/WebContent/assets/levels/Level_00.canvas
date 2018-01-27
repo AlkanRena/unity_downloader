@@ -19,7 +19,9 @@
       200
     ],
     "showGrid": true,
-    "state_init_after": "cash = 40;"
+    "create_after": "    cashUI = this.add.bitmapText(10, 10, 'nesfont','Bitmap Fonts!',64);",
+    "state_init_after": "cash = 40;",
+    "state_preload_after": "this.load.bitmapFont('nesfont', 'assets/fonts/nesfont.png', 'assets/fonts/nesfont.xml');"
   },
   "stateSettings": {
     "scaleMode": "SHOW_ALL",

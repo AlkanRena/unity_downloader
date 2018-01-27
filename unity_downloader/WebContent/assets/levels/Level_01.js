@@ -235,19 +235,20 @@ Level_01.prototype.smoke = function () {
 //TODO: remove after getting hapiness
 
 	smoke_above.data.happiness = Math.floor(Math.random()* 100);
+
 	if (smoke_above.data.happiness < 15) {
 		_smoke_above_user.animations.add('death_smoke', [30, 31, 32, 31, 30], 5, false);
 		_smoke_above_user.animations.play('death_smoke', 5, false, true);
-	} else if (smoke_above.data.happiness <= 15 && smoke_above.data.happiness < 30) {
+	} else if (smoke_above.data.happiness >= 15 && smoke_above.data.happiness < 30) {
 		_smoke_above_user.animations.add('angry_smoke', [33, 34, 35, 34, 33], 5, false);
 		_smoke_above_user.animations.play('angry_smoke', 5, false, true);
-	} else if (smoke_above.data.happiness <= 30 && smoke_above.data.happiness < 45) {
+	} else if (smoke_above.data.happiness >= 30 && smoke_above.data.happiness < 45) {
 		_smoke_above_user.animations.add('frustrate_smoke', [21, 22, 23, 22, 21], 5, false);
 		_smoke_above_user.animations.play('frustrate_smoke', 5, false, true);
-	} else if (smoke_above.data.happiness <= 45 && smoke_above.data.happiness < 60) {
+	} else if (smoke_above.data.happiness >= 45 && smoke_above.data.happiness < 60) {
 		_smoke_above_user.animations.add('alert_smoke', [0, 1, 2, 1, 0], 5, false);
 		_smoke_above_user.animations.play('alert_smoke', 5, false, true);
-	} else if (smoke_above.data.happiness <= 60 && smoke_above.data.happiness < 75) {
+	} else if (smoke_above.data.happiness >= 60 && smoke_above.data.happiness < 75) {
 		_smoke_above_user.animations.add('dot_smoke', [12, 13, 14, 13, 12], 5, false);
 		_smoke_above_user.animations.play('dot_smoke', 5, false, true);
 	} else if (smoke_above.data.happiness >= 75) {

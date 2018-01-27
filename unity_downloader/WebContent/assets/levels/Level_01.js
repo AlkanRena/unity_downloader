@@ -27,7 +27,7 @@ var score;
 var cash;
 var maxCash = 200;
 var cashUI;
-var cashLine
+var cashLine;
 
 
 
@@ -124,7 +124,9 @@ Level_01.prototype.create = function () {
 	this.f_add_router = __add_router;
 	this.time.events.repeat(Phaser.Timer.SECOND * 1, 6, this.add_random_people, this);
 	this.add_random_people();
-	
+	if (this.sprites.length != 0) {
+		game.time.events.loop(Phaser.Timer.SECOND * 2, Level_01.prototype.smoke, this);
+	}
 	var w = 800, h=600;
 	// Create a label to use as a button
 	pause_label = game.add.text(w - 100, 20, 'Pause', { font: '24px Arial', fill: '#fff' });
@@ -167,6 +169,7 @@ Level_01.prototype.create = function () {
 	
 	            // Display the choice
 	            choiseLabel.text = 'You chose menu item: ' + choisemap[choise];
+	            console.log(choise);
 	            
 	            if(choise == 0){
 	            	game.state.start('Level');
@@ -242,7 +245,7 @@ Level_01.prototype.add_random_people = function add_random_people() {
 		var place = places[position];
 		place.x = place.x - 12;
 		place.y = place.y - 16;
-		var sprite_names = ["ninja_f","ninja_m","warrior_m","warrior_f","ranger_f","ranger_m"];
+		var sprite_names = ["ninja_f","ninja_m","warrior_m","townfolk1_f","ranger_f","ranger_m"];
 		this.add_sprite(place.x, place.y,sprite_names[random_number]);
 		places.splice(position, 1);
 	} else {
@@ -251,6 +254,20 @@ Level_01.prototype.add_random_people = function add_random_people() {
 	
 	
 
+};
+
+Level_01.prototype.smoke = function () {
+	var _smoke_above_user = null;
+	if (_smoke_above_user != null) {
+		_smoke_above_user.remove(sprite, true);
+	};
+	random_number = Math.floor(Math.random()*this.sprites.length);
+	var smoke_above = this.sprites[random_number];
+	_smoke_above_user = this.add.sprite(smoke_above.position.x + 5, smoke_above.position.y - 5, "pop_up", 0);
+	_smoke_above_user.animations.add('alert_smoke', [0, 1, 2, 1, 0], 5, false);
+	
+	_smoke_above_user.animations.play('alert_smoke', 5, false, true);
+	
 };
 
 Level_01.prototype.addRouter = function () {
@@ -273,7 +290,7 @@ Level_01.prototype.addRouter = function () {
 
 Level_01.prototype.SpriteDraged = function (dragedObj) {
 	//puste pod wyłączenie i włączenie wifi 
-}
+};
 
 
 Level_01.prototype.upgreade = function listener (sprite, pointer) {
@@ -304,4 +321,4 @@ Level_01.prototype.upgreade = function listener (sprite, pointer) {
 	        cash -= 160;
 		}
 	}
-}
+};

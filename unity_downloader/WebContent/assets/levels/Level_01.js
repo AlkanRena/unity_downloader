@@ -99,7 +99,7 @@ Level_01.prototype.create = function () {
 	this.add.sprite(480, 352, 'stol', 0);
 	
 	
-	this.time.events.repeat(Phaser.Timer.SECOND * 2, 6, this.add_random_people, this);
+	this.time.events.repeat(Phaser.Timer.SECOND * 10, 6, this.add_random_people, this);
 	
 };
 

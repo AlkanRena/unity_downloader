@@ -21,7 +21,7 @@
       200
     ],
     "showGrid": true,
-    "create_after": "this.time.events.repeat(Phaser.Timer.SECOND * 2, 6, this.add_random_people, this);"
+    "create_after": "this.time.events.repeat(Phaser.Timer.SECOND * 10, 6, this.add_random_people, this);"
   },
   "stateSettings": {
     "pageAlignHorizontally": true,

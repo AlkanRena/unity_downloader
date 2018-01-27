@@ -261,6 +261,9 @@ Level_01.prototype.addRouter = function () {
 	var _wifi = this.add.sprite(0, 0, 'wifi');
 	_wifi.inputEnabled = true;
 	_wifi.input.enableDrag();
+	_wifi.data.level = 0;
+	_wifi.data.range = 10;
+	_wifi.data.transfer = 10;
 	this.fwifi = _wifi;
 };
 

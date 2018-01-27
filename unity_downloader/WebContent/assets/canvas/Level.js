@@ -52,17 +52,18 @@ Level.prototype.create = function () {
 
 Level.prototype.update = function () {
 	
-	// if (typeof this.fwifi !== 'undefined' && this.fwifi.events.onDragStop) {
-
-	// 	this.fwifi.input.allowHorizontalDrag = false; 
-	// 	this.fwifi.input.allowVerticalDrag = false; 
-	// } 
+	if (typeof this.fwifi !== 'undefined' && this.fwifi.input.isDragged) {
+		Level.prototype.SpriteDraged(this.fwifi);
+	} 
 };
 
 Level.prototype.addRouter = function () {
 	var _wifi = this.add.sprite(0, 0, 'wifi');
 	_wifi.inputEnabled = true;
 	_wifi.input.enableDrag();
-	this.fwifi = _wifi
-	console.log(_wifi)
+	this.fwifi = _wifi;
 };
+
+Level.prototype.SpriteDraged = function (dragedObj) {
+	//puste pod wyłączenie i włączenie wifi 
+}

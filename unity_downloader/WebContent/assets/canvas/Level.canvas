@@ -40,10 +40,26 @@
     "info": {
       "editorName": "Level",
       "setAll": [],
-      "children": []
+      "children": [{
+        "type": "button",
+        "id": "cb3daa93-77f7-4ed0-a764-3ce8c0079b68",
+        "asset": "0",
+        "info": {
+          "editorName": "add_router",
+          "editorPublic": true,
+          "x": 735,
+          "y": 162,
+          "callback": "Level.prototype.addRouter"
+        }
+      }]
     }
   },
   "type": "STATE",
-  "asset-table": {},
+  "asset-table": {"0": {
+    "file": "WebContent/assets/pack.json",
+    "section": "level",
+    "asset": "socials",
+    "sprite": "addthis.png"
+  }},
   "prefab-table": {}
 }

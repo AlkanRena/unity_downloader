@@ -31,9 +31,18 @@ Level.prototype.init = function () {
 
 Level.prototype.preload = function () {
 	
+	this.load.pack('level', 'assets/pack.json');
+	
 };
 
 Level.prototype.create = function () {
+	var _add_router = this.add.button(735, 162, 'socials', Level.prototype.addRouter, this, null, 'addthis.png', null, null);
+	
+	
+	
+	// public fields
+	
+	this.fAdd_router = _add_router;
 	
 };
 
@@ -43,4 +52,10 @@ Level.prototype.create = function () {
 
 Level.prototype.update = function () {
 	
+};
+
+Level.prototype.addRouter = function () {
+	var _wifi = this.add.sprite(0, 0, 'wifi');
+	_wifi.inputEnabled = true;
+	_wifi.input.enableDrag();
 };

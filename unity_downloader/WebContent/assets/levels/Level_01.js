@@ -103,7 +103,7 @@ Level_01.prototype.create = function () {
 /* --- end generated code --- */
 // -- user code here --
 
-Level.prototype.update = function () {
+Level_01.prototype.update = function () {
 		
 };
 

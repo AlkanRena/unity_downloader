@@ -8,7 +8,7 @@ window.onload = function() {
      game.state.add("GameTitle", gameTitle);
      game.state.add("Level_00", Level);
      game.state.add("Level_01", Level_01);
-     //game.state.add("Level_02", Level_02);
+     game.state.add("Level_02", Level_02);
      game.state.add("Highscores", highscores);
 	game.state.start("Boot");
 }

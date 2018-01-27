@@ -37,20 +37,20 @@ var cashLine
 
 
 /**
- * Level_01.
+ * Level_02.
  */
-function Level_01() {
+function Level_02() {
 	
 	Phaser.State.call(this);
 	
 }
 
 /** @type Phaser.State */
-var Level_01_proto = Object.create(Phaser.State.prototype);
-Level_01.prototype = Level_01_proto;
-Level_01.prototype.constructor = Level_01;
+var Level_02_proto = Object.create(Phaser.State.prototype);
+Level_02.prototype = Level_02_proto;
+Level_02.prototype.constructor = Level_02;
 
-Level_01.prototype.init = function () {
+Level_02.prototype.init = function () {
 	
 	this.scale.pageAlignHorizontally = true;
 	this.scale.pageAlignVertically = true;
@@ -60,7 +60,7 @@ Level_01.prototype.init = function () {
 	
 };
 
-Level_01.prototype.preload = function () {
+Level_02.prototype.preload = function () {
 	
 	this.load.pack('level', 'assets/pack.json');
 	
@@ -68,7 +68,7 @@ Level_01.prototype.preload = function () {
 	
 };
 
-Level_01.prototype.create = function () {
+Level_02.prototype.create = function () {
 	var _floor = this.add.tileSprite(224, 160, 800, 600, 'floor', 3);
 	_floor.scale.setTo(0.5, 0.5);
 	
@@ -114,7 +114,7 @@ Level_01.prototype.create = function () {
 	
 	var _lvl_choice = this.add.sprite(-816, -288, 'lvl_choice');
 	
-	var __add_router = this.add.button(624, 160, 'socials', Level_01.prototype.addRouter, this, null, 'addthis.png', null, null);
+	var __add_router = this.add.button(624, 160, 'socials', Level_02.prototype.addRouter, this, null, 'addthis.png', null, null);
 	
 	
 	
@@ -210,7 +210,7 @@ Level_01.prototype.create = function () {
 /* --- end generated code --- */
 // -- user code here --
 
-Level_01.prototype.update = function () {
+Level_02.prototype.update = function () {
 	if (typeof this.fwifi !== 'undefined' && this.fwifi.input.isDragged) {
 		Level.prototype.SpriteDraged(this.fwifi);
 	}
@@ -223,7 +223,7 @@ Level_01.prototype.update = function () {
     cashUI.setText(cash + "/" + maxCash);
 };
 
-Level_01.prototype.add_random_people = function add_random_people() {
+Level_02.prototype.add_random_people = function add_random_people() {
 
 
     this.add_sprite = function(x, y, sprite_name){
@@ -255,7 +255,7 @@ Level_01.prototype.add_random_people = function add_random_people() {
 
 };
 
-Level_01.prototype.addRouter = function () {
+Level_02.prototype.addRouter = function () {
 	if (cash < 19) {
 		return false;
 	}
@@ -269,17 +269,17 @@ Level_01.prototype.addRouter = function () {
 	_wifi.data.level = 0;
 	_wifi.data.range = 10;
 	_wifi.data.transfer = 10;
-	_wifi.events.onInputUp.add(Level_01.prototype.upgreade,this);
+	_wifi.events.onInputUp.add(Level_02.prototype.upgreade,this);
 
 	this.fwifi = _wifi;
 };
 
-Level_01.prototype.SpriteDraged = function (dragedObj) {
+Level_02.prototype.SpriteDraged = function (dragedObj) {
 	//puste pod wyłączenie i włączenie wifi 
 }
 
 
-Level_01.prototype.upgreade = function listener (sprite, pointer) {
+Level_02.prototype.upgreade = function listener (sprite, pointer) {
 	if (sprite.data.level != 4){
 		switch(sprite.data.level) {
 	    case 0:

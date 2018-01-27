@@ -39,16 +39,18 @@ Level.prototype.init = function () {
 Level.prototype.preload = function () {
 	
 	this.load.pack('level', 'assets/pack.json');
-    this.load.bitmapFont('nesfont', 'assets/fonts/nesfont.png', 'assets/fonts/nesfont.xml');
+	
+	this.load.bitmapFont('nesfont', 'assets/fonts/nesfont.png', 'assets/fonts/nesfont.xml');
+	
 };
 
 Level.prototype.create = function () {
 	var _add_router = this.add.button(735, 162, 'socials', Level.prototype.addRouter, this, null, 'addthis.png', null, null);
-    cashUI = this.add.bitmapText(10, 10, 'nesfont','Bitmap Fonts!',64);
 	
 	// public fields
 	
 	this.fAdd_router = _add_router;
+	cashUI = this.add.bitmapText(10, 10, 'nesfont','Bitmap Fonts!',64);
 	
 };
 

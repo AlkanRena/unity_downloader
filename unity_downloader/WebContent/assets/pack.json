@@ -203,10 +203,50 @@
       "frameMax": -1,
       "margin": 0,
       "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "stol",
+      "url": "assets/stol2.png",
+      "frameWidth": 68,
+      "frameHeight": 48,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "krzeslo",
+      "url": "assets/krzeslo1_17x20.png",
+      "frameWidth": 20,
+      "frameHeight": 20,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "krzeslo1",
+      "url": "assets/krzeslo3_17x28.png",
+      "frameWidth": 20,
+      "frameHeight": 28,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "krzeslo2_17x28",
+      "url": "assets/krzeslo2_17x28.png",
+      "frameWidth": 17,
+      "frameHeight": 28,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
     }
   ],
   "meta": {
-    "generated": "1517043997023",
+    "generated": "1517048152040",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

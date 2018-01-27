@@ -18,7 +18,8 @@
       200,
       200
     ],
-    "showGrid": true
+    "showGrid": true,
+    "state_init_after": "cash = 40;"
   },
   "stateSettings": {
     "scaleMode": "SHOW_ALL",

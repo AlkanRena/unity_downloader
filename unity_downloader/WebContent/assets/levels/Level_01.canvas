@@ -5,7 +5,9 @@
     "sceneWidth": 800,
     "sceneHeight": 600,
     "generateOnSave": true,
-    "enableStepping": false,
+    "enableStepping": true,
+    "stepWidth": 16,
+    "stepHeight": 16,
     "lang": "JAVA_SCRIPT",
     "baseClass": "Phaser.State",
     "backgroundColor": [
@@ -47,114 +49,12 @@
           "asset": "0",
           "info": {
             "editorName": "floor",
-            "x": 226,
-            "y": 170,
+            "x": 224,
+            "y": 160,
             "scale.x": 0.5,
             "scale.y": 0.5,
-            "width": 756.151123046875,
-            "height": 544.9242553710938
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "93075d2a-0379-4125-a7a2-f72e67b07d20",
-          "asset": "1",
-          "info": {
-            "editorName": "krzeslo",
-            "x": 503,
-            "y": 389
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "5737f600-d1e7-4cc8-a353-ca10f1e306bd",
-          "asset": "2",
-          "info": {
-            "editorName": "krzeslo1",
-            "x": 545,
-            "y": 355
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "50225cd4-d9f9-441d-8665-679a4a358608",
-          "asset": "3",
-          "info": {
-            "editorName": "krzeslo2_17x",
-            "x": 505,
-            "y": 330
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "d8244f71-f841-4682-93ca-f4ed8f7afa8f",
-          "asset": "2",
-          "info": {
-            "editorName": "krzeslo2",
-            "x": 479,
-            "y": 355,
-            "scale.x": -1
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "a08391c2-6ebc-4247-8a95-32224c7cf1fb",
-          "asset": "4",
-          "info": {
-            "editorName": "stol",
-            "x": 479,
-            "y": 346
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "a54a9b92-e02f-4d94-b5f0-bb7da46829db",
-          "asset": "1",
-          "info": {
-            "editorName": "krzeslo3",
-            "x": 316,
-            "y": 388
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "7c19a27a-9d0f-4548-9ccc-c5f64f66ffcc",
-          "asset": "2",
-          "info": {
-            "editorName": "krzeslo4",
-            "x": 358,
-            "y": 354
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "57c2bfcb-f4c6-46b5-a261-08e7f9d4e7d0",
-          "asset": "3",
-          "info": {
-            "editorName": "krzeslo2_17x1",
-            "x": 318,
-            "y": 329
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "080da1d1-e00d-4dbf-aab7-8a9a88114653",
-          "asset": "2",
-          "info": {
-            "editorName": "krzeslo5",
-            "x": 292,
-            "y": 354,
-            "scale.x": -1
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "c0daa688-4834-4c55-9614-ac61a00851c6",
-          "asset": "4",
-          "info": {
-            "editorName": "stol1",
-            "x": 292,
-            "y": 345
+            "width": 800,
+            "height": 600
           }
         },
         {
@@ -163,111 +63,198 @@
           "asset": "1",
           "info": {
             "editorName": "krzeslo6",
-            "x": 315,
-            "y": 268
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "a7436706-bdf6-4f37-b1dc-c728d0e7e8fc",
-          "asset": "2",
-          "info": {
-            "editorName": "krzeslo7",
-            "x": 357,
-            "y": 234
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "a4a1243f-c671-4bc4-86a0-c5c8da394013",
-          "asset": "3",
-          "info": {
-            "editorName": "krzeslo2_17x2",
-            "x": 317,
-            "y": 209
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "38d5fcdd-ae3d-4965-86dc-b98888f4782b",
-          "asset": "2",
-          "info": {
-            "editorName": "krzeslo8",
-            "x": 291,
-            "y": 234,
-            "scale.x": -1
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "14b8f5e4-ecec-46ff-b58b-43d982e9bc91",
-          "asset": "4",
-          "info": {
-            "editorName": "stol2",
-            "x": 291,
-            "y": 225
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "2adffa40-34c1-4241-a4fc-7a4ab6518335",
-          "asset": "1",
-          "info": {
-            "editorName": "krzeslo9",
-            "x": 498,
+            "x": 336,
             "y": 272
           }
         },
         {
           "type": "spritesheet",
-          "id": "64640ef8-028a-4ab4-a4ee-3de50a49908f",
-          "asset": "2",
+          "id": "c52c624f-7f99-45db-aac1-463645d79f4b",
+          "asset": "1",
           "info": {
-            "editorName": "krzeslo10",
-            "x": 540,
-            "y": 238
+            "editorName": "krzeslo7",
+            "x": 320,
+            "y": 272
           }
         },
         {
           "type": "spritesheet",
-          "id": "2000677b-18e3-43c7-8edd-c1d4bf78773f",
+          "id": "7629eff8-918f-4c65-af8e-169ab90f3989",
+          "asset": "2",
+          "info": {
+            "editorName": "krzeslo2_17x2",
+            "x": 320,
+            "y": 208
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "d7d77622-2423-4914-90d6-bbc511f3c8f3",
+          "asset": "2",
+          "info": {
+            "editorName": "krzeslo2_17x4",
+            "x": 336,
+            "y": 208
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "14b8f5e4-ecec-46ff-b58b-43d982e9bc91",
           "asset": "3",
           "info": {
-            "editorName": "krzeslo2_17x3",
-            "x": 500,
-            "y": 213
+            "editorName": "stol2",
+            "x": 304,
+            "y": 224
           }
         },
         {
           "type": "spritesheet",
-          "id": "00d8f3e9-fda6-4f95-bc2e-e30234a3dd88",
+          "id": "d99d4864-382f-47a1-a3b5-d11cdffe8801",
+          "asset": "1",
+          "info": {
+            "editorName": "krzeslo",
+            "x": 512,
+            "y": 272
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "5828bc63-9ccd-47f0-be63-60a632325635",
+          "asset": "1",
+          "info": {
+            "editorName": "krzeslo1",
+            "x": 496,
+            "y": 272
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "76735c7b-09ad-4381-b4e2-59f18bf939e8",
           "asset": "2",
           "info": {
-            "editorName": "krzeslo11",
-            "x": 474,
-            "y": 238,
-            "scale.x": -1
+            "editorName": "krzeslo2_17x",
+            "x": 496,
+            "y": 208
           }
         },
         {
           "type": "spritesheet",
-          "id": "ae4c7966-9b58-4e00-b47d-7682675238a1",
-          "asset": "4",
+          "id": "ebaba2f7-3119-46b6-a8ed-7f647ddb0c0c",
+          "asset": "2",
+          "info": {
+            "editorName": "krzeslo2_17x1",
+            "x": 512,
+            "y": 208
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "5c95f6b1-4cfb-48b6-82df-2c970be739c7",
+          "asset": "3",
+          "info": {
+            "editorName": "stol",
+            "x": 480,
+            "y": 224
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "c1c049f6-1e29-4bd6-8e8c-a8029fca2467",
+          "asset": "1",
+          "info": {
+            "editorName": "krzeslo2",
+            "x": 336,
+            "y": 400
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "1e1cf76b-d2fe-4651-960a-08f69d8fe39a",
+          "asset": "1",
+          "info": {
+            "editorName": "krzeslo3",
+            "x": 320,
+            "y": 400
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "bf2eeaa1-3585-437c-ac67-d1609ff15bf2",
+          "asset": "2",
+          "info": {
+            "editorName": "krzeslo2_17x3",
+            "x": 320,
+            "y": 336
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "e6729462-01ad-4ee2-abad-122b38044ffc",
+          "asset": "2",
+          "info": {
+            "editorName": "krzeslo2_17x5",
+            "x": 336,
+            "y": 336
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "c22a313b-ba70-486a-8341-28e3c1a9c5f1",
+          "asset": "3",
+          "info": {
+            "editorName": "stol1",
+            "x": 304,
+            "y": 352
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "ca1dc32a-6649-4802-a288-3e03fe3561e5",
+          "asset": "1",
+          "info": {
+            "editorName": "krzeslo4",
+            "x": 512,
+            "y": 400
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "9dfb3da7-3b67-4c67-a051-154839ccb6f7",
+          "asset": "1",
+          "info": {
+            "editorName": "krzeslo5",
+            "x": 496,
+            "y": 400
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "ee3d4466-48a0-4b3b-b7af-0a9a665ef0ec",
+          "asset": "2",
+          "info": {
+            "editorName": "krzeslo2_17x6",
+            "x": 496,
+            "y": 336
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "c420026a-10b4-4917-9c6b-646e46afafea",
+          "asset": "2",
+          "info": {
+            "editorName": "krzeslo2_17x7",
+            "x": 512,
+            "y": 336
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "a5da0ea9-ec66-49da-9ade-5d622b31695e",
+          "asset": "3",
           "info": {
             "editorName": "stol3",
-            "x": 474,
-            "y": 229
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "bc3a5c82-d7bd-4bf1-b288-877da4767112",
-          "asset": "5",
-          "info": {
-            "editorName": "healer_f",
-            "x": 613,
-            "y": 117,
-            "data": "{\n\"something\": true\n}"
+            "x": 480,
+            "y": 352
           }
         }
       ]
@@ -290,25 +277,13 @@
     "2": {
       "file": "WebContent/assets/pack.json",
       "section": "level",
-      "asset": "krzeslo1",
+      "asset": "krzeslo2_17x28",
       "sprite": "0"
     },
     "3": {
       "file": "WebContent/assets/pack.json",
       "section": "level",
-      "asset": "krzeslo2_17x28",
-      "sprite": "0"
-    },
-    "4": {
-      "file": "WebContent/assets/pack.json",
-      "section": "level",
       "asset": "stol",
-      "sprite": "0"
-    },
-    "5": {
-      "file": "WebContent/assets/pack.json",
-      "section": "level",
-      "asset": "healer_f",
       "sprite": "0"
     }
   },

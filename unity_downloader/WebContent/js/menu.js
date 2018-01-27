@@ -8,6 +8,7 @@ window.onload = function() {
      game.state.add("GameTitle", gameTitle);
      game.state.add("Level", Level);
      game.state.add("Level_01", Level_01);
+     game.state.add("Highscores", highscores);
 	game.state.start("Boot");
 }
 
@@ -37,7 +38,8 @@ preload.prototype = {
           game.load.image("gametitle", "assets/menu/title.png");
           game.load.image("playbutton", "assets/menu/playbutton.png");
           game.load.image("menubutton", "assets/menu/menu.png");
-          game.load.image("resetgame", "assets/menu/reset.png");
+         // game.load.image("resetgame", "assets/menu/reset.png");
+          game.load.image("highscores", "assets/menu/highscores.png");
           game.load.image("thankyou", "assets/menu/thanks.png");
 	},
   	create: function(){
@@ -53,15 +55,18 @@ gameTitle.prototype = {
      create: function(){
           var title = game.add.sprite(game.width / 2, 60, "gametitle");
           title.anchor.set(0.5);           
-          var playButton = game.add.button(game.width / 2, game.height / 2 , "playbutton", function(){});
+          var playButton = game.add.button(game.width / 2, game.height / 2 , "playbutton", play);
           playButton.anchor.set(0.5);
           menuGroup = game.add.group();
           var menuButton = game.add.button(game.width / 2, game.height - 30, "menubutton", toggleMenu);
           menuButton.anchor.set(0.5);
           menuGroup.add(menuButton);
-          var resetGame = game.add.button(game.width / 2, game.height + 50, "resetgame", function(){});
-          resetGame.anchor.set(0.5);
-          menuGroup.add(resetGame);
+          //var resetGame = game.add.button(game.width / 2, game.height + 50, "resetgame", function(){});
+         // resetGame.anchor.set(0.5);
+         // menuGroup.add(resetGame);
+          var highScores = game.add.button(game.width / 2, game.height + 50, "highscores", highscores);
+          highScores.anchor.set(0.5);
+          menuGroup.add(highScores);
           var thankYou = game.add.button(game.width / 2, game.height + 130, "thankyou", function(){});
           thankYou.anchor.set(0.5);
           menuGroup.add(thankYou);          
@@ -79,4 +84,12 @@ function toggleMenu(){
                y: 0    
           }, 500, Phaser.Easing.Bounce.Out, true);     
      }
+}
+
+function play(){
+	game.state.start('Level_01');
+	
+}
+function highscores(){
+	game.state.start('highscores');
 }

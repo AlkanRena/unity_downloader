@@ -2,9 +2,9 @@
   "level": [
     {
       "type": "atlas",
-      "key": "socials",
-      "textureURL": "assets/gfx/socials.png",
-      "atlasURL": "assets/gfx/socials.json",
+      "key": "wifi",
+      "textureURL": "assets/gfx/wifi.png",
+      "atlasURL": "assets/gfx/wifi.json",
       "format": "TEXTURE_ATLAS_JSON_HASH"
     },
     {
@@ -21,16 +21,6 @@
       "type": "spritesheet",
       "key": "user",
       "url": "assets/gfx/user.png",
-      "frameWidth": 32,
-      "frameHeight": 32,
-      "frameMax": -1,
-      "margin": 0,
-      "spacing": 0
-    },
-    {
-      "type": "spritesheet",
-      "key": "wifi",
-      "url": "assets/gfx/wifi.png",
       "frameWidth": 32,
       "frameHeight": 32,
       "frameMax": -1,
@@ -176,16 +166,6 @@
     },
     {
       "type": "spritesheet",
-      "key": "warrior_f",
-      "url": "assets/gfx/warrior_f.png",
-      "frameWidth": 32,
-      "frameHeight": 36,
-      "frameMax": -1,
-      "margin": 0,
-      "spacing": 0
-    },
-    {
-      "type": "spritesheet",
       "key": "warrior_m",
       "url": "assets/gfx/warrior_m.png",
       "frameWidth": 32,
@@ -258,7 +238,7 @@
     }
   ],
   "meta": {
-    "generated": "1517068621036",
+    "generated": "1517074900246",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

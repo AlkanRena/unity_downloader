@@ -249,10 +249,16 @@
       "key": "cashBar",
       "url": "assets/gfx/cashBar.png",
       "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "lvl_choice",
+      "url": "assets/menu/choice_menu.png",
+      "overwrite": false
     }
   ],
   "meta": {
-    "generated": "1517063621748",
+    "generated": "1517068621036",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

@@ -18,9 +18,12 @@
       200,
       200
     ],
-    "showGrid": true
+    "showGrid": true,
+    "create_after": "this.time.events.add(Phaser.Timer.SECOND * 1, this.add_ninja_f, this);"
   },
   "stateSettings": {
+    "pageAlignHorizontally": true,
+    "pageAlignVertically": true,
     "stageBackgroundColor": [
       0,
       0,
@@ -37,10 +40,240 @@
     "info": {
       "editorName": "Level_01",
       "setAll": [],
-      "children": []
+      "children": [
+        {
+          "type": "spritesheet",
+          "id": "93075d2a-0379-4125-a7a2-f72e67b07d20",
+          "asset": "0",
+          "info": {
+            "editorName": "krzeslo",
+            "x": 503,
+            "y": 389
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "5737f600-d1e7-4cc8-a353-ca10f1e306bd",
+          "asset": "1",
+          "info": {
+            "editorName": "krzeslo1",
+            "x": 545,
+            "y": 355
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "50225cd4-d9f9-441d-8665-679a4a358608",
+          "asset": "2",
+          "info": {
+            "editorName": "krzeslo2_17x",
+            "x": 505,
+            "y": 330
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "d8244f71-f841-4682-93ca-f4ed8f7afa8f",
+          "asset": "1",
+          "info": {
+            "editorName": "krzeslo2",
+            "x": 479,
+            "y": 355,
+            "scale.x": -1
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "a08391c2-6ebc-4247-8a95-32224c7cf1fb",
+          "asset": "3",
+          "info": {
+            "editorName": "stol",
+            "x": 479,
+            "y": 346
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "a54a9b92-e02f-4d94-b5f0-bb7da46829db",
+          "asset": "0",
+          "info": {
+            "editorName": "krzeslo3",
+            "x": 316,
+            "y": 388
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "7c19a27a-9d0f-4548-9ccc-c5f64f66ffcc",
+          "asset": "1",
+          "info": {
+            "editorName": "krzeslo4",
+            "x": 358,
+            "y": 354
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "57c2bfcb-f4c6-46b5-a261-08e7f9d4e7d0",
+          "asset": "2",
+          "info": {
+            "editorName": "krzeslo2_17x1",
+            "x": 318,
+            "y": 329
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "080da1d1-e00d-4dbf-aab7-8a9a88114653",
+          "asset": "1",
+          "info": {
+            "editorName": "krzeslo5",
+            "x": 292,
+            "y": 354,
+            "scale.x": -1
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "c0daa688-4834-4c55-9614-ac61a00851c6",
+          "asset": "3",
+          "info": {
+            "editorName": "stol1",
+            "x": 292,
+            "y": 345
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "de9c95e9-1b33-40ac-b892-3c8d17e8ada1",
+          "asset": "0",
+          "info": {
+            "editorName": "krzeslo6",
+            "x": 315,
+            "y": 268
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "a7436706-bdf6-4f37-b1dc-c728d0e7e8fc",
+          "asset": "1",
+          "info": {
+            "editorName": "krzeslo7",
+            "x": 357,
+            "y": 234
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "a4a1243f-c671-4bc4-86a0-c5c8da394013",
+          "asset": "2",
+          "info": {
+            "editorName": "krzeslo2_17x2",
+            "x": 317,
+            "y": 209
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "38d5fcdd-ae3d-4965-86dc-b98888f4782b",
+          "asset": "1",
+          "info": {
+            "editorName": "krzeslo8",
+            "x": 291,
+            "y": 234,
+            "scale.x": -1
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "14b8f5e4-ecec-46ff-b58b-43d982e9bc91",
+          "asset": "3",
+          "info": {
+            "editorName": "stol2",
+            "x": 291,
+            "y": 225
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "2adffa40-34c1-4241-a4fc-7a4ab6518335",
+          "asset": "0",
+          "info": {
+            "editorName": "krzeslo9",
+            "x": 498,
+            "y": 272
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "64640ef8-028a-4ab4-a4ee-3de50a49908f",
+          "asset": "1",
+          "info": {
+            "editorName": "krzeslo10",
+            "x": 540,
+            "y": 238
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "2000677b-18e3-43c7-8edd-c1d4bf78773f",
+          "asset": "2",
+          "info": {
+            "editorName": "krzeslo2_17x3",
+            "x": 500,
+            "y": 213
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "00d8f3e9-fda6-4f95-bc2e-e30234a3dd88",
+          "asset": "1",
+          "info": {
+            "editorName": "krzeslo11",
+            "x": 474,
+            "y": 238,
+            "scale.x": -1
+          }
+        },
+        {
+          "type": "spritesheet",
+          "id": "ae4c7966-9b58-4e00-b47d-7682675238a1",
+          "asset": "3",
+          "info": {
+            "editorName": "stol3",
+            "x": 474,
+            "y": 229
+          }
+        }
+      ]
     }
   },
   "type": "STATE",
-  "asset-table": {},
+  "asset-table": {
+    "0": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "krzeslo",
+      "sprite": "0"
+    },
+    "1": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "krzeslo1",
+      "sprite": "0"
+    },
+    "2": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "krzeslo2_17x28",
+      "sprite": "0"
+    },
+    "3": {
+      "file": "WebContent/assets/pack.json",
+      "section": "level",
+      "asset": "stol",
+      "sprite": "0"
+    }
+  },
   "prefab-table": {}
 }

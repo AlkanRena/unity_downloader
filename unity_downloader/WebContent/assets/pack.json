@@ -1,9 +1,82 @@
 {
   "level": [
-   
+    {
+      "type": "atlas",
+      "key": "socials",
+      "textureURL": "assets/socials.png",
+      "atlasURL": "assets/socials.json",
+      "format": "TEXTURE_ATLAS_JSON_HASH"
+    },
+    {
+      "type": "spritesheet",
+      "key": "chair",
+      "url": "assets/chair.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "user",
+      "url": "assets/user.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "wifi",
+      "url": "assets/wifi.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "atlas",
+      "key": "menu_buttons",
+      "textureURL": "assets/menu_buttons.png",
+      "atlasURL": "assets/menu_buttons.json",
+      "format": "TEXTURE_ATLAS_JSON_HASH"
+    },
+    {
+      "type": "spritesheet",
+      "key": "floor",
+      "url": "assets/floor.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "pop_up",
+      "url": "assets/pop_up.png",
+      "frameWidth": 16,
+      "frameHeight": 16,
+      "frameMax": -1,
+      "margin": 1,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "ui_icons",
+      "url": "assets/ui_icons.png",
+      "frameWidth": 16,
+      "frameHeight": 16,
+      "frameMax": -1,
+      "margin": 1,
+      "spacing": 0
+    }
   ],
   "meta": {
-    "generated": "1516994668851",
+    "generated": "1517012239217",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

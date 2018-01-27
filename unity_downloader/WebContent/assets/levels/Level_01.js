@@ -34,6 +34,9 @@ Level_01.prototype.preload = function () {
 };
 
 Level_01.prototype.create = function () {
+	var _floor = this.add.tileSprite(226, 170, 756, 545, 'floor', 3);
+	_floor.scale.setTo(0.5, 0.5);
+	
 	this.add.sprite(503, 389, 'krzeslo', 0);
 	
 	this.add.sprite(545, 355, 'krzeslo1', 0);

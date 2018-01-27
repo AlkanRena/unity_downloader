@@ -3,9 +3,11 @@
 
 var score;
 var cash;
+var cost = 0;
 var maxCash = 200;
 var cashUI;
-var cashLine
+var redLine;
+var greenLine;
 
 /* --- start generated code --- */
 
@@ -53,9 +55,13 @@ Level.prototype.create = function () {
 	this.fAdd_router = _add_router;
 	this.add.sprite(0, 0, 'cashBar');
 	var gfx = this.add.graphics(10,20);
-	gfx.lineStyle(20, 0x7FFF00, 0.8);
-	cashLine = gfx.lineTo(40,0);
-	cashUI = this.add.bitmapText(46, 14, 'nesfont',cash + "/" + maxCash,64);
+    gfx.lineStyle(20, 0xFF4500, 0.8);
+    redLine = gfx.lineTo(40,0);
+    var gfxg = this.add.graphics(10,20);
+    gfxg.lineStyle(20, 0x7FFF00, 0.8);
+    greenLine = gfxg.lineTo(40,0);
+
+    cashUI = this.add.bitmapText(46, 14, 'nesfont',cash + "/" + maxCash,64);
 	
 };
 
@@ -68,13 +74,18 @@ Level.prototype.update = function () {
 	if (typeof this.fwifi !== 'undefined' && this.fwifi.input.isDragged) {
 		Level.prototype.SpriteDraged(this.fwifi);
 	}
-    if(Math.random()*20>16 &&cash<maxCash)
+    if(Math.random()*20>6 &&cash<maxCash)
 		cash+=1;
 
+    //cost = 80;
+    if(cash<cost){
+        cost = 0;
+    }
 
-    var line = cash/maxCash*400;
-    cashLine.width=line;
-    console.log(cashLine);
+    var lineRed = cash/maxCash*400;
+    var lineGreen = ((cash-cost)/maxCash)*400;
+    redLine.width=lineRed;
+    greenLine.width=lineGreen;
     cashUI.setText(cash + "/" + maxCash);
 };
 

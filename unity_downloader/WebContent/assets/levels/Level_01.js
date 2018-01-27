@@ -48,7 +48,7 @@ Level_01.prototype.init = function () {
 	this.scale.pageAlignHorizontally = true;
 	this.scale.pageAlignVertically = true;
 	
-	this.sprites=[]
+	this.sprites=[];
 	
 };
 
@@ -109,8 +109,8 @@ Level_01.prototype.create = function () {
 	// public fields
 	
 	this.fLvl_choice = _lvl_choice;
-	this.time.events.repeat(Phaser.Timer.SECOND * 10, 6, this.add_random_people, this);
-	
+	this.time.events.repeat(Phaser.Timer.SECOND * 1, 6, this.add_random_people, this);
+	this.add_random_people();
 	
 	var w = 800, h=600;
 	// Create a label to use as a button
@@ -203,9 +203,9 @@ Level_01.prototype.add_random_people = function add_random_people() {
         sprite.animations.add('walk_up', [0, 1, 2], 4, true);
         sprite.animations.add('walk_down', [6, 7, 8], 4, true);
         this.sprites.push(sprite);
+        console.log(this.sprites);
     };
 
-    var sprite_name;
 	position = Math.floor(Math.random()*places.length);
 	random_number = Math.floor(Math.random()*5);
 	if (typeof places[0] !== 'undefined') {

@@ -6,8 +6,9 @@ window.onload = function() {
      game.state.add("Boot", boot);
      game.state.add("Preload", preload);
      game.state.add("GameTitle", gameTitle);
-     game.state.add("Level", Level);
+     game.state.add("Level_00", Level);
      game.state.add("Level_01", Level_01);
+     //game.state.add("Level_02", Level_02);
      game.state.add("Highscores", highscores);
 	game.state.start("Boot");
 }
@@ -41,6 +42,9 @@ preload.prototype = {
          // game.load.image("resetgame", "assets/menu/reset.png");
           game.load.image("highscores", "assets/menu/highscores.png");
           game.load.image("thankyou", "assets/menu/thanks.png");
+          game.load.image("1level", "assets/menu/1level.png");
+          game.load.image("2level", "assets/menu/2level.png");
+          game.load.image("3level", "assets/menu/3level.png");
 	},
   	create: function(){
 		game.state.start("GameTitle");
@@ -64,12 +68,21 @@ gameTitle.prototype = {
           //var resetGame = game.add.button(game.width / 2, game.height + 50, "resetgame", function(){});
          // resetGame.anchor.set(0.5);
          // menuGroup.add(resetGame);
-          var highScores = game.add.button(game.width / 2, game.height + 50, "highscores", highscores);
+          var highScores = game.add.button(game.width / 2, game.height + 30, "highscores", highscores);
           highScores.anchor.set(0.5);
           menuGroup.add(highScores);
-          var thankYou = game.add.button(game.width / 2, game.height + 130, "thankyou", function(){});
+          var thankYou = game.add.button(game.width / 2, game.height + 150, "thankyou", function(){});
           thankYou.anchor.set(0.5);
-          menuGroup.add(thankYou);          
+          menuGroup.add(thankYou);
+          var one_level = game.add.button(game.width / 2 - 100, game.height + 50, "1level", play0);
+          thankYou.anchor.set(0.5);
+          menuGroup.add(one_level);
+          var two_level = game.add.button(game.width / 2, game.height + 50, "2level", play1);
+          thankYou.anchor.set(0.5);
+          menuGroup.add(two_level);;
+          var three_level = game.add.button(game.width / 2 - 50, game.height + 90, "3level", play2);
+          thankYou.anchor.set(0.5);
+          menuGroup.add(three_level);
      }
 }
 
@@ -87,9 +100,17 @@ function toggleMenu(){
 }
 
 function play(){
-	game.state.start('Level_01');
-	
+	game.state.start('Level_01');	
 }
 function highscores(){
 	game.state.start('highscores');
+}
+function play0(){
+	game.state.start('Level_00');
+}
+function play1(){
+	game.state.start('Level_01');
+}
+function play2(){
+	game.state.start('Level_02');
 }

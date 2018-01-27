@@ -48,6 +48,8 @@ Level_01.prototype.init = function () {
 	this.scale.pageAlignHorizontally = true;
 	this.scale.pageAlignVertically = true;
 	
+	this.sprites=[]
+	
 };
 
 Level_01.prototype.preload = function () {
@@ -193,31 +195,25 @@ Level_01.prototype.update = function () {
 
 Level_01.prototype.add_random_people = function add_random_people() {
 
+
+    this.add_sprite = function(x, y, sprite_name){
+        var sprite = this.add.sprite(x, y, sprite_name , 10);
+        sprite.animations.add('walk_right', [3, 4, 5], 4, true);
+        sprite.animations.add('walk_left', [9, 10, 11], 4, true);
+        sprite.animations.add('walk_up', [0, 1, 2], 4, true);
+        sprite.animations.add('walk_down', [6, 7, 8], 4, true);
+        this.sprites.push(sprite);
+    };
+
+    var sprite_name;
 	position = Math.floor(Math.random()*places.length);
 	random_number = Math.floor(Math.random()*5);
 	if (typeof places[0] !== 'undefined') {
 		var place = places[position];
 		place.x = place.x - 12;
 		place.y = place.y - 16;
-		switch (random_number) {
-    case 0:
-        this.add_ninja_f(place.x, place.y);
-        break;
-    case 1:
-        this.add_ninja_m(place.x, place.y);
-        break;
-    case 2:
-        this.add_warrior_m(place.x, place.y);
-        break;
-    case 3:
-        this.add_warrior_f(place.x, place.y);
-        break;
-    case 4:
-        this.add_ranger_f(place.x, place.y);
-        break;
-    case 5:
-        this.add_ranger_m(place.x, place.y);
-	}
+		var sprite_names = ["ninja_f","ninja_m","warrior_m","warrior_f","ranger_f","ranger_m"];
+		this.add_sprite(place.x, place.y,sprite_names[random_number]);
 		places.splice(position, 1);
 	} else {
 		console.log("added random");
@@ -227,58 +223,4 @@ Level_01.prototype.add_random_people = function add_random_people() {
 
 };
 
-
-Level_01.prototype.add_ninja_f = function add_ninja_f(x, y) {
-	var _ninja_f = this.add.sprite(x, y, 'ninja_f', 10);
-	_ninja_f.animations.add('walk_right', [3, 4, 5], 4, true);
-	_ninja_f.animations.add('walk_left', [9, 10, 11], 4, true);
-	_ninja_f.animations.add('walk_up', [0, 1, 2], 4, true);
-	_ninja_f.animations.add('walk_down', [6, 7, 8], 4, true);
-	this.fninja_f = _ninja_f;
-};
-
-Level_01.prototype.add_ninja_m = function add_ninja_m(x, y) {
-	var _ninja_m = this.add.sprite(x, y, 'ninja_m', 10);
-	_ninja_m.animations.add('walk_right', [3, 4, 5], 4, true);
-	_ninja_m.animations.add('walk_left', [9, 10, 11], 4, true);
-	_ninja_m.animations.add('walk_up', [0, 1, 2], 4, true);
-	_ninja_m.animations.add('walk_down', [6, 7, 8], 4, true);
-	this.fninja_m = _ninja_m;
-};
-
-Level_01.prototype.add_warrior_f = function add_warrior_f(x, y) {
-	var _warrior_f = this.add.sprite(x, y, 'warrior_f', 10);
-	_warrior_f.animations.add('walk_right', [3, 4, 5], 4, true);
-	_warrior_f.animations.add('walk_left', [9, 10, 11], 4, true);
-	_warrior_f.animations.add('walk_up', [0, 1, 2], 4, true);
-	_warrior_f.animations.add('walk_down', [6, 7, 8], 4, true);
-	this.fwarrior_f = _warrior_f;
-};
-
-Level_01.prototype.add_warrior_m = function add_warrior_m(x, y) {
-	var _warrior_m = this.add.sprite(x, y, 'warrior_m', 10);
-	_warrior_m.animations.add('walk_right', [3, 4, 5], 4, true);
-	_warrior_m.animations.add('walk_left', [9, 10, 11], 4, true);
-	_warrior_m.animations.add('walk_up', [0, 1, 2], 4, true);
-	_warrior_m.animations.add('walk_down', [6, 7, 8], 4, true);
-	this.fwarrior_m = _warrior_m; 
-};
-
-Level_01.prototype.add_ranger_f = function add_ranger_f(x, y) {
-	var _ranger_f = this.add.sprite(x, y, 'ranger_f', 10);
-	_ranger_f.animations.add('walk_right', [3, 4, 5], 4, true);
-	_ranger_f.animations.add('walk_left', [9, 10, 11], 4, true);
-	_ranger_f.animations.add('walk_up', [0, 1, 2], 4, true);
-	_ranger_f.animations.add('walk_down', [6, 7, 8], 4, true);
-	this.franger_f = _ranger_f;
-};
-
-Level_01.prototype.add_ranger_m = function add_ranger_m(x, y) {
-	var _ranger_m = this.add.sprite(x, y, 'ranger_m', 10);
-	_ranger_m.animations.add('walk_right', [3, 4, 5], 4, true);
-	_ranger_m.animations.add('walk_left', [9, 10, 11], 4, true);
-	_ranger_m.animations.add('walk_up', [0, 1, 2], 4, true);
-	_ranger_m.animations.add('walk_down', [6, 7, 8], 4, true);
-	this.franger_m = _ranger_m;
-};
 

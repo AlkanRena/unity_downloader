@@ -4,6 +4,7 @@
 var score;
 var cash;
 var maxCash = 200;
+var cashUI;
 
 /* --- start generated code --- */
 
@@ -38,13 +39,12 @@ Level.prototype.init = function () {
 Level.prototype.preload = function () {
 	
 	this.load.pack('level', 'assets/pack.json');
-	
+    this.load.bitmapFont('nesfont', 'assets/fonts/nesfont.png', 'assets/fonts/nesfont.xml');
 };
 
 Level.prototype.create = function () {
 	var _add_router = this.add.button(735, 162, 'socials', Level.prototype.addRouter, this, null, 'addthis.png', null, null);
-	
-	
+    cashUI = this.add.bitmapText(10, 10, 'nesfont','Bitmap Fonts!',64);
 	
 	// public fields
 	
@@ -60,7 +60,10 @@ Level.prototype.update = function () {
 	
 	if (typeof this.fwifi !== 'undefined' && this.fwifi.input.isDragged) {
 		Level.prototype.SpriteDraged(this.fwifi);
-	} 
+	}
+    if(Math.random()*20>19 &&cash<maxCash) //do ogarnięcia
+		cash+=1;
+    cashUI.setText(cash + "/" + maxCash);
 };
 
 Level.prototype.addRouter = function () {

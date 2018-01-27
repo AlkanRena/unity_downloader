@@ -147,7 +147,7 @@ Level_01.prototype.create = function () {
 	            choiseLabel.text = 'You chose menu item: ' + choisemap[choise];
 	            
 	            if(choise == 0){
-	            	game.state.start('Level');
+	            	game.state.start('Level_00');
 	            	lvl_choice.destroy();
 	                choiseLabel.destroy();
 	                game.paused = false;
@@ -174,7 +174,7 @@ Level_01.prototype.create = function () {
 	    }
 	}
 	
-
+	
 	
 };
 
@@ -227,17 +227,33 @@ Level_01.prototype.add_random_people = function add_random_people() {
 };
 
 Level_01.prototype.smoke = function () {
-	var _smoke_above_user = null;
-	if (_smoke_above_user != null) {
-		_smoke_above_user.remove(sprite, true);
-	};
 	random_number = Math.floor(Math.random()*this.sprites.length);
 	var smoke_above = this.sprites[random_number];
+
 	_smoke_above_user = this.add.sprite(smoke_above.position.x + 5, smoke_above.position.y - 5, "pop_up", 0);
-	_smoke_above_user.animations.add('alert_smoke', [0, 1, 2, 1, 0], 5, false);
 
-	_smoke_above_user.animations.play('alert_smoke', 5, false, true);
+//TODO: remove after getting hapiness
 
+	smoke_above.data.happiness = Math.floor(Math.random()* 100);
+	if (smoke_above.data.happiness < 15) {
+		_smoke_above_user.animations.add('death_smoke', [30, 31, 32, 31, 30], 5, false);
+		_smoke_above_user.animations.play('death_smoke', 5, false, true);
+	} else if (smoke_above.data.happiness <= 15 && smoke_above.data.happiness < 30) {
+		_smoke_above_user.animations.add('angry_smoke', [33, 34, 35, 34, 33], 5, false);
+		_smoke_above_user.animations.play('angry_smoke', 5, false, true);
+	} else if (smoke_above.data.happiness <= 30 && smoke_above.data.happiness < 45) {
+		_smoke_above_user.animations.add('frustrate_smoke', [21, 22, 23, 22, 21], 5, false);
+		_smoke_above_user.animations.play('frustrate_smoke', 5, false, true);
+	} else if (smoke_above.data.happiness <= 45 && smoke_above.data.happiness < 60) {
+		_smoke_above_user.animations.add('alert_smoke', [0, 1, 2, 1, 0], 5, false);
+		_smoke_above_user.animations.play('alert_smoke', 5, false, true);
+	} else if (smoke_above.data.happiness <= 60 && smoke_above.data.happiness < 75) {
+		_smoke_above_user.animations.add('dot_smoke', [12, 13, 14, 13, 12], 5, false);
+		_smoke_above_user.animations.play('dot_smoke', 5, false, true);
+	} else if (smoke_above.data.happiness >= 75) {
+		_smoke_above_user.animations.add('heart_smoke', [9, 10, 11, 10, 9], 5, false);
+		_smoke_above_user.animations.play('heart_smoke', 5, false, true);
+	}
 };
 
 Level_01.prototype.addRouter = function () {

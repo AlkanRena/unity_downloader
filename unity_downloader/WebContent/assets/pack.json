@@ -49,9 +49,9 @@
       "key": "pop_up",
       "url": "assets/gfx/pop_up.png",
       "frameWidth": 16,
-      "frameHeight": 16,
+      "frameHeight": 17,
       "frameMax": -1,
-      "margin": 1,
+      "margin": 0,
       "spacing": 0
     },
     {
@@ -245,7 +245,7 @@
     }
   ],
   "meta": {
-    "generated": "1517076246834",
+    "generated": "1517088755775",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

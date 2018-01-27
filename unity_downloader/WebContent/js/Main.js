@@ -6,6 +6,7 @@ window.onload = function() {
 	// game.state.add("Menu", Menu);
 	// game.state.add("Preload", Preload);
 	game.state.add("Level", Level);
-
-	game.state.start("Level");
+	game.state.add("Level_01", Level_01);
+	
+	game.state.start("Level_01");
 };

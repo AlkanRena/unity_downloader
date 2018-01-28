@@ -305,32 +305,32 @@ cashUI.setText(cash + "/" + maxCash);
 
 
 
-    for(var j = 0; j < this.routers.length; j++){
-    	this.routers[j].data.jammers = [];
-    }
+ //    for(var j = 0; j < this.routers.length; j++){
+ //    	this.routers[j].data.jammers = [];
+ //    }
 
-	for(var i = 0; i < this.sprites.length; i++){
-    	this.sprites.router = null;
-    }
+	// for(var i = 0; i < this.sprites.length; i++){
+ //    	this.sprites.router = null;
+ //    }
 
-	for(i = 0; i < 1; i++){
-        var jammer = this.sprites[i];
-		for(j = 0; j < this.routers.length; j++){
-            var router = this.routers[j];
-            var xDiff = jammer.x - router.x;
-            var yDiff = jammer.y - router.y;
-            var dist = xDiff*xDiff + yDiff*yDiff;
+	// for(i = 0; i < 1; i++){
+ //        var jammer = this.sprites[i];
+	// 	for(j = 0; j < this.routers.length; j++){
+ //            var router = this.routers[j];
+ //            var xDiff = jammer.x - router.x;
+ //            var yDiff = jammer.y - router.y;
+ //            var dist = xDiff*xDiff + yDiff*yDiff;
 
-            var range = router.data.range;
-            var inRange = range* range - dist;
-			if(inRange > 0 ){
-            	if(jammer.data.id_router === null){
-                    jammer.data.id_router = j;
-                    router.data.jammers=[1];
-                }
-			}
-		}
-    }
+ //            var range = router.data.range;
+ //            var inRange = range* range - dist;
+	// 		if(inRange > 0 ){
+ //            	if(jammer.data.id_router === null){
+ //                    jammer.data.id_router = j;
+ //                    router.data.jammers=[1];
+ //                }
+	// 		}
+	// 	}
+ //    }
 
 
 };
@@ -402,10 +402,8 @@ var _wifi = this.add.sprite(250, 5, "wifi_zznc");
 _wifi.animations.add('beep', [0,1,2,3,4,5,6,7,8], 4, true);
 _wifi.animations.play('beep');
 
-_wifi.data.level = 0;
 
-_wifi.data.range = 100;
-_wifi.data.transfer = 10;
+
 if(_wifi.data.level == 0){
 _wifi = this.add.sprite(250, 5, "wifi_z");
 _wifi.animations.add('beep', [0,1,2,3,4,5,6], 3, true);
@@ -424,8 +422,14 @@ _wifi.inputEnabled = true;
 _wifi.events.onInputUp.add(Level_01.prototype.upgreade);
 
 _wifi.input.enableDrag();
-_wifi.animations.play('beep');
-	this.routers.push(_wifi);
+
+
+_wifi.data.level = 0;
+
+_wifi.data.range = 100;
+_wifi.data.transfer = 10;
+this.routers.push(_wifi);
+	
 };
 
 Level_01.prototype.SpriteDraged = function (dragedObj) {
@@ -434,11 +438,8 @@ Level_01.prototype.SpriteDraged = function (dragedObj) {
 
 
 Level_01.prototype.upgreade = function listener (data) {
-
-console.log(data);
 active_sprite = data ;
-console.log("-------------------------------------------------------");
-console.log(active_sprite);
+
 
 _add_range.events.onInputUp.add(Level_01.prototype.addRange);
 
@@ -454,8 +455,7 @@ _add_transfer.events.onInputUp.add(Level_01.prototype.addTransfer);
 };
 
 Level_01.prototype.UpdateCost = function UpdateCost () {
-// this.wifis.data.level += 1;
-// _wifi.data.range += 10;
+console.log(active_sprite)
 if (cash > 100) {
 console.log(active_sprite);
 _add_range.inputEnabled = true;
@@ -470,7 +470,9 @@ _add_transfer.tint = 0xbbbbbb;
 }
 };
 
-Level_01.prototype.addRange = function () {};
+Level_01.prototype.addRange = function () {
+
+};
 
 Level_01.prototype.addTransfer = function () {
 

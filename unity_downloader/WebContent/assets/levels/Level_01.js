@@ -57,7 +57,8 @@ Level_01.prototype.init = function () {
 	this.scale.pageAlignVertically = true;
 	
 	this.sprites=[];
-	cash = 40;
+	this.routers = [];
+    cash = 40;
 	
 };
 
@@ -189,9 +190,40 @@ Level_01.prototype.update = function () {
 		cash+=1;
 
 
-    var line = cash/maxCash*400;
-    cashLine.width=line;
-    cashUI.setText(cash + "/" + maxCash);
+	var line = cash/maxCash*400;
+	cashLine.width=line;
+	cashUI.setText(cash + "/" + maxCash);
+
+
+    for(var j = 0; j < this.routers.length; j++){
+    	this.routers[j].data.jammers = [];
+    }
+
+	for(var i = 0; i < this.sprites.length; i++){
+    	this.sprites.router = null;
+    	console.log(this.sprites.router)
+    }
+
+	for(i = 0; i < 1; i++){
+        var jammer = this.sprites[i];
+		for(j = 0; j < this.routers.length; j++){
+            var router = this.routers[j];
+            var xDiff = jammer.x - router.x;
+            var yDiff = jammer.y - router.y;
+            var dist = xDiff*xDiff + yDiff*yDiff;
+
+            var range = router.data.range;
+            var inRange = range* range - dist;
+			if(inRange > 0 ){
+            	if(jammer.data.id_router === null){
+                    jammer.data.id_router = j;
+                    router.data.jammers=[1];
+                }
+			}
+		}
+    }
+
+
 };
 
 Level_01.prototype.add_random_people = function add_random_people() {
@@ -269,11 +301,11 @@ Level_01.prototype.addRouter = function () {
 	_wifi.inputEnabled = true;
 	_wifi.input.enableDrag();
 	_wifi.data.level = 0;
-	_wifi.data.range = 10;
+	_wifi.data.range = 100;
 	_wifi.data.transfer = 10;
 	_wifi.events.onInputUp.add(Level_01.prototype.upgreade,this);
 
-	this.fwifi = _wifi;
+	this.routers.push(_wifi);
 };
 
 Level_01.prototype.SpriteDraged = function (dragedObj) {
@@ -286,27 +318,29 @@ Level_01.prototype.upgreade = function listener (sprite, pointer) {
 		switch(sprite.data.level) {
 	    case 0:
 	        sprite.data.level = 1;
-	        sprite.data.range = 15;
+	        //sprite.data.range = 15;
 	        sprite.data.transfer = 20;
 	        cash -= 40;
 	        break;
 	    case 1:
 	        sprite.data.level = 2;
-	        sprite.data.range = 15;
+	        //sprite.data.range = 15;
 	        sprite.data.transfer = 20;
 	       	cash -= 80;
 	        break;
 	    case 2:
 	        sprite.data.level = 3;
-	        sprite.data.range = 20;
+	        //sprite.data.range = 20;
 	        sprite.data.transfer = 40;
 	        cash -= 120; 
 	        break;
 	    case 3:
 	        sprite.data.level = 4;
-	        sprite.data.range = 25;
+	        //sprite.data.range = 25;
 	        sprite.data.transfer = 80;
 	        cash -= 160;
 		}
 	}
+
+	console.log(sprite)
 };

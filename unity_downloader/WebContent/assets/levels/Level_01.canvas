@@ -21,7 +21,7 @@
       200
     ],
     "showGrid": true,
-    "create_after": "this.time.events.repeat(Phaser.Timer.SECOND * 1, 6, this.add_random_people, this);\nthis.add_random_people();\nif (this.sprites.length != 0) {\n\tgame.time.events.loop(Phaser.Timer.SECOND * 2, Level_01.prototype.smoke, this);\n}\nvar w = 800, h=600;\n// Create a label to use as a button\npause_label = game.add.text(w - 100, 20, 'Pause', { font: '24px Arial', fill: '#fff' });\npause_label.inputEnabled = true;\npause_label.events.onInputUp.add(function () {\n    // When the paus button is pressed, we pause the game\n    game.paused = true;\n\n    // Then add the menu\n    lvl_choice = game.add.sprite(w/2, h/2, 'lvl_choice');\n    lvl_choice.anchor.setTo(0.5, 0.5);\n\n    // And a label to illustrate which menu item was chosen. (This is not necessary)\n    choiseLabel = game.add.text(w/2, h-150, 'Click outside menu to continue', { font: '30px Arial', fill: '#fff' });\n    choiseLabel.anchor.setTo(0.5, 0.5);\n});\n\n// Add a input listener that can help us return from being paused\ngame.input.onDown.add(unpause, self);\n\n// And finally the method that handels the pause menu\nfunction unpause(event){\n    // Only act if paused\n    if(game.paused){\n        // Calculate the corners of the menu\n        var x1 = w/2 - 150/2, x2 = w/2 + 150/2,\n            y1 = h/2 - 50/2, y2 = h/2 + 50/2;\n\n        // Check if the click was inside the menu\n        if(event.x > x1 && event.x < x2 && event.y > y1 && event.y < y2 ){\n            // The choicemap is an array that will help us see which item was clicked\n            var choisemap = ['one', 'two', 'three'];\n\n            // Get menu local coordinates for the click\n            var x = event.x - x1,\n                y = event.y - y1;\n\n            // Calculate the choice \n            var choise = Math.floor(x / 50) + 3*Math.floor(y / 50);\n\n            // Display the choice\n            choiseLabel.text = 'You chose menu item: ' + choisemap[choise];\n            console.log(choise);\n            \n            if(choise == 0){\n            \tgame.state.start('Level');\n            \tlvl_choice.destroy();\n                choiseLabel.destroy();\n                game.paused = false;\n            } else if (choise == 1){\n            \tgame.state.start('Level_01');\n            \tlvl_choice.destroy();\n                choiseLabel.destroy();\n                game.paused = false;\n            } else if (choise == 2) {\n            \tgame.state.start('Level_02');\n            \tlvl_choice.destroy();\n                choiseLabel.destroy();\n                game.paused = false;\n            }\n        }\n        else{\n            // Remove the menu and the label\n        \tlvl_choice.destroy();\n            choiseLabel.destroy();\n\n            // Unpause the game\n            game.paused = false;\n        }\n    }\n}\n\n\n\tthis.add.sprite(0, 0, 'cashBar');\n\tvar gfx = this.add.graphics(10,20);\n\tgfx.lineStyle(20, 0x7FFF00, 0.8);\n\tcashLine = gfx.lineTo(40,0);\n\tcashUI = this.add.bitmapText(46, 14, 'nesfont',cash + \"/\" + maxCash,64);",
+    "create_after": "\tthis.fLvl_choice = _lvl_choice;\n\tthis.f_add_router = __add_router;\n\t\t\n\t\tthis.fLvl_choice = _lvl_choice;\n\t\tthis.f_add_router = __add_router;\n\t\t\tthis.fLvl_choice = _lvl_choice;\n\t\t\tthis.f_add_router = __add_router;\n\t\t\tthis.add.sprite(0, 0, 'cashBar');\n\t\t\tvar gfx = this.add.graphics(10,20);\n\t\t\tgfx.lineStyle(20, 0x7FFF00, 0.8);\n\t\t\tcashLine = gfx.lineTo(40,0);\n\t\t\tcashUI = this.add.bitmapText(46, 14, 'nesfont',cash + \"/\" + maxCash,64);\n\t\t\t\n\t\t\t\n\t\t\tthis.time.events.repeat(Phaser.Timer.SECOND * 1, 6, this.add_random_people, this);\n\t\t\tthis.add_random_people();\n\t\t\tif (this.sprites.length != 0) {\n\t\t\t\tgame.time.events.loop(Phaser.Timer.SECOND * 2, Level_01.prototype.smoke, this);\n\t\t\t}\n\t\t\tvar w = 800, h=600;\n\t\t\t// Create a label to use as a button\n\t\t\tpause_label = game.add.text(w - 100, 20, 'Pause', { font: '24px Arial', fill: '#fff' });\n\t\t\tpause_label.inputEnabled = true;\n\t\t\tpause_label.events.onInputUp.add(function () {\n\t\t\t    // When the paus button is pressed, we pause the game\n\t\t\t    game.paused = true;\n\t\t\t\n\t\t\t    // Then add the menu\n\t\t\t    lvl_choice = game.add.sprite(w/2, h/2, 'lvl_choice');\n\t\t\t    lvl_choice.anchor.setTo(0.5, 0.5);\n\t\t\t\n\t\t\t    // And a label to illustrate which menu item was chosen. (This is not necessary)\n\t\t\t    choiseLabel = game.add.text(w/2, h-150, 'Click outside menu to continue', { font: '30px Arial', fill: '#fff' });\n\t\t\t    choiseLabel.anchor.setTo(0.5, 0.5);\n\t\t\t});\n\t\t\t\n\t\t\t// Add a input listener that can help us return from being paused\n\t\t\tgame.input.onDown.add(unpause, self);\n\t\t\t\n\t\t\t// And finally the method that handels the pause menu\n\t\t\tfunction unpause(event){\n\t\t\t    // Only act if paused\n\t\t\t    if(game.paused){\n\t\t\t        // Calculate the corners of the menu\n\t\t\t        var x1 = w/2 - 150/2, x2 = w/2 + 150/2,\n\t\t\t            y1 = h/2 - 50/2, y2 = h/2 + 50/2;\n\t\t\t\n\t\t\t        // Check if the click was inside the menu\n\t\t\t        if(event.x > x1 && event.x < x2 && event.y > y1 && event.y < y2 ){\n\t\t\t            // The choicemap is an array that will help us see which item was clicked\n\t\t\t            var choisemap = ['one', 'two', 'three'];\n\t\t\t\n\t\t\t            // Get menu local coordinates for the click\n\t\t\t            var x = event.x - x1,\n\t\t\t                y = event.y - y1;\n\t\t\t\n\t\t\t            // Calculate the choice \n\t\t\t            var choise = Math.floor(x / 50) + 3*Math.floor(y / 50);\n\t\t\t\n\t\t\t            // Display the choice\n\t\t\t            choiseLabel.text = 'You chose menu item: ' + choisemap[choise];\n\t\t\t            console.log(choise);\n\t\t\t            \n\t\t\t            if(choise == 0){\n\t\t\t            \tgame.state.start('Level');\n\t\t\t            \tlvl_choice.destroy();\n\t\t\t                choiseLabel.destroy();\n\t\t\t                game.paused = false;\n\t\t\t            } else if (choise == 1){\n\t\t\t            \tgame.state.start('Level_01');\n\t\t\t            \tlvl_choice.destroy();\n\t\t\t                choiseLabel.destroy();\n\t\t\t                game.paused = false;\n\t\t\t            } else if (choise == 2) {\n\t\t\t            \tgame.state.start('Level_02');\n\t\t\t            \tlvl_choice.destroy();\n\t\t\t                choiseLabel.destroy();\n\t\t\t                game.paused = false;\n\t\t\t            }\n\t\t\t        }\n\t\t\t        else{\n\t\t\t            // Remove the menu and the label\n\t\t\t        \tlvl_choice.destroy();\n\t\t\t            choiseLabel.destroy();\n\t\t\t\n\t\t\t            // Unpause the game\n\t\t\t            game.paused = false;\n\t\t\t        }\n\t\t\t    }\n\t\t\t}\n\t\t\t\n\t\t\tfor(var i = 0; i< places_01.length; i++){              \n\t\t\t\tvar place = places_01[i];\n\t\t\t\tthis.add.sprite(place.x, place.y, place.z, 0);\n\t\t\t}\n\n\t\t\tfor(var i = 0; i< places_01_table.length; i++){              \n\t\t\t\tvar place = places_01_table[i];\n\t\t\t\tthis.add.sprite(place.x, place.y, place.z, 0);\n\t\t\t}\n\t",
     "state_init_after": "this.sprites=[];\ncash = 40;",
     "state_preload_after": "this.load.bitmapFont('nesfont', 'assets/fonts/nesfont.png', 'assets/fonts/nesfont.xml');"
   },
@@ -60,209 +60,9 @@
           }
         },
         {
-          "type": "spritesheet",
-          "id": "de9c95e9-1b33-40ac-b892-3c8d17e8ada1",
-          "asset": "1",
-          "info": {
-            "editorName": "krzeslo6",
-            "x": 336,
-            "y": 272
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "c52c624f-7f99-45db-aac1-463645d79f4b",
-          "asset": "1",
-          "info": {
-            "editorName": "krzeslo7",
-            "x": 320,
-            "y": 272
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "7629eff8-918f-4c65-af8e-169ab90f3989",
-          "asset": "2",
-          "info": {
-            "editorName": "krzeslo2_17x2",
-            "x": 320,
-            "y": 208
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "d7d77622-2423-4914-90d6-bbc511f3c8f3",
-          "asset": "2",
-          "info": {
-            "editorName": "krzeslo2_17x4",
-            "x": 336,
-            "y": 208
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "14b8f5e4-ecec-46ff-b58b-43d982e9bc91",
-          "asset": "3",
-          "info": {
-            "editorName": "stol2",
-            "x": 304,
-            "y": 224
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "d99d4864-382f-47a1-a3b5-d11cdffe8801",
-          "asset": "1",
-          "info": {
-            "editorName": "krzeslo",
-            "x": 512,
-            "y": 272
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "5828bc63-9ccd-47f0-be63-60a632325635",
-          "asset": "1",
-          "info": {
-            "editorName": "krzeslo1",
-            "x": 496,
-            "y": 272
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "76735c7b-09ad-4381-b4e2-59f18bf939e8",
-          "asset": "2",
-          "info": {
-            "editorName": "krzeslo2_17x",
-            "x": 496,
-            "y": 208
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "ebaba2f7-3119-46b6-a8ed-7f647ddb0c0c",
-          "asset": "2",
-          "info": {
-            "editorName": "krzeslo2_17x1",
-            "x": 512,
-            "y": 208
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "5c95f6b1-4cfb-48b6-82df-2c970be739c7",
-          "asset": "3",
-          "info": {
-            "editorName": "stol",
-            "x": 480,
-            "y": 224
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "c1c049f6-1e29-4bd6-8e8c-a8029fca2467",
-          "asset": "1",
-          "info": {
-            "editorName": "krzeslo2",
-            "x": 336,
-            "y": 400
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "1e1cf76b-d2fe-4651-960a-08f69d8fe39a",
-          "asset": "1",
-          "info": {
-            "editorName": "krzeslo3",
-            "x": 320,
-            "y": 400
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "bf2eeaa1-3585-437c-ac67-d1609ff15bf2",
-          "asset": "2",
-          "info": {
-            "editorName": "krzeslo2_17x3",
-            "x": 320,
-            "y": 336
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "e6729462-01ad-4ee2-abad-122b38044ffc",
-          "asset": "2",
-          "info": {
-            "editorName": "krzeslo2_17x5",
-            "x": 336,
-            "y": 336
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "c22a313b-ba70-486a-8341-28e3c1a9c5f1",
-          "asset": "3",
-          "info": {
-            "editorName": "stol1",
-            "x": 304,
-            "y": 352
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "ca1dc32a-6649-4802-a288-3e03fe3561e5",
-          "asset": "1",
-          "info": {
-            "editorName": "krzeslo4",
-            "x": 512,
-            "y": 400
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "9dfb3da7-3b67-4c67-a051-154839ccb6f7",
-          "asset": "1",
-          "info": {
-            "editorName": "krzeslo5",
-            "x": 496,
-            "y": 400
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "ee3d4466-48a0-4b3b-b7af-0a9a665ef0ec",
-          "asset": "2",
-          "info": {
-            "editorName": "krzeslo2_17x6",
-            "x": 496,
-            "y": 336
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "c420026a-10b4-4917-9c6b-646e46afafea",
-          "asset": "2",
-          "info": {
-            "editorName": "krzeslo2_17x7",
-            "x": 512,
-            "y": 336
-          }
-        },
-        {
-          "type": "spritesheet",
-          "id": "a5da0ea9-ec66-49da-9ade-5d622b31695e",
-          "asset": "3",
-          "info": {
-            "editorName": "stol3",
-            "x": 480,
-            "y": 352
-          }
-        },
-        {
           "type": "image",
           "id": "4183e8bb-6510-481d-9768-731adc0a5ec3",
-          "asset": "4",
+          "asset": "1",
           "info": {
             "editorName": "lvl_choice",
             "editorPublic": true,
@@ -274,7 +74,7 @@
         {
           "type": "button",
           "id": "9cdcd9ce-49a2-4083-bcb3-6689558984a0",
-          "asset": "5",
+          "asset": "2",
           "info": {
             "editorName": "_add_router",
             "editorPublic": true,
@@ -297,27 +97,9 @@
     "1": {
       "file": "WebContent/assets/pack.json",
       "section": "level",
-      "asset": "krzeslo",
-      "sprite": "0"
-    },
-    "2": {
-      "file": "WebContent/assets/pack.json",
-      "section": "level",
-      "asset": "krzeslo2_17x28",
-      "sprite": "0"
-    },
-    "3": {
-      "file": "WebContent/assets/pack.json",
-      "section": "level",
-      "asset": "stol",
-      "sprite": "0"
-    },
-    "4": {
-      "file": "WebContent/assets/pack.json",
-      "section": "level",
       "asset": "lvl_choice"
     },
-    "5": {
+    "2": {
       "file": "WebContent/assets/pack.json",
       "section": "level",
       "asset": "socials",

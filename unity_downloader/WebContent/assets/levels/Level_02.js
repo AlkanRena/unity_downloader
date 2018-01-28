@@ -1,7 +1,7 @@
 
 // -- user code here --
 
-var places = [
+var places_2 = [
 		{"x" : 336, "y" : 272},
 		{"x" : 320, "y" : 272},
 		{"x" : 320, "y" : 208},
@@ -238,15 +238,15 @@ Level_02.prototype.add_random_people = function add_random_people() {
         this.sprites.push(sprite);
     };
 
-	position = Math.floor(Math.random()*places.length);
+	position = Math.floor(Math.random()*places_02.length);
 	random_number = Math.floor(Math.random()*5);
-	if (typeof places[0] !== 'undefined') {
-		var place = places[position];
+	if (typeof places_02[0] !== 'undefined') {
+		var place = places_02[position];
 		place.x = place.x - 12;
 		place.y = place.y - 16;
 		var sprite_names = ["ninja_f","ninja_m","warrior_m","warrior_f","ranger_f","ranger_m"];
 		this.add_sprite(place.x, place.y,sprite_names[random_number]);
-		places.splice(position, 1);
+		places_2.splice(position, 1);
 	} else {
 		console.log("added random");
 	}

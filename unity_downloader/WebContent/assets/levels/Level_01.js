@@ -1,24 +1,31 @@
 
 // -- user code here --
-
-var places = [
-		{"x" : 336, "y" : 272},
-		{"x" : 320, "y" : 272},
-		{"x" : 320, "y" : 208},
-		{"x" : 336, "y" : 208},
-		{"x" : 512, "y" : 272},
-		{"x" : 496, "y" : 272},
-		{"x" : 496, "y" : 208},
-		{"x" : 512, "y" : 208},
-		{"x" : 336, "y" : 400},
-		{"x" : 320, "y" : 400},
-		{"x" : 320, "y" : 336},
-		{"x" : 336, "y" : 336},
-		{"x" : 512, "y" : 400},
-		{"x" : 496, "y" : 400},
-		{"x" : 496, "y" : 336},
-		{"x" : 512, "y" : 336}
+var places_01 = [
+		{"x" : 320, "y" : 208, "z" : "krzeslo"},
+		{"x" : 336, "y" : 208, "z" : "krzeslo"},
+		{"x" : 336, "y" : 272, "z" : "krzeslo"},
+		{"x" : 320, "y" : 272, "z" : "krzeslo"},
+		{"x" : 496, "y" : 208, "z" : "krzeslo"},
+		{"x" : 512, "y" : 208, "z" : "krzeslo"},
+		{"x" : 512, "y" : 272, "z" : "krzeslo"},
+		{"x" : 496, "y" : 272, "z" : "krzeslo"},
+		{"x" : 320, "y" : 336, "z" : "krzeslo"},
+		{"x" : 336, "y" : 336, "z" : "krzeslo"},
+		{"x" : 336, "y" : 400, "z" : "krzeslo"},
+		{"x" : 320, "y" : 400, "z" : "krzeslo"},
+		{"x" : 496, "y" : 336, "z" : "krzeslo"},
+		{"x" : 512, "y" : 336, "z" : "krzeslo"},
+		{"x" : 512, "y" : 400, "z" : "krzeslo"},
+		{"x" : 496, "y" : 400, "z" : "krzeslo"}
+		
 	];
+var places_01_table = [
+		{"x" : 304, "y" : 224, "z" : "stol"},
+		{"x" : 480, "y" : 224, "z" : "stol"},
+		{"x" : 304, "y" : 352, "z" : "stol"},
+		{"x" : 480, "y" : 352, "z" : "stol"}
+];
+
 var position;
 
 var random_number;
@@ -62,24 +69,16 @@ Level_01.prototype.init = function () {
 };
 
 Level_01.prototype.preload = function () {
+	
 	this.load.pack('level', 'assets/pack.json');
+	
 	this.load.bitmapFont('nesfont', 'assets/fonts/nesfont.png', 'assets/fonts/nesfont.xml');
+	
 };
 
 Level_01.prototype.create = function () {
 	var _floor = this.add.tileSprite(224, 160, 800, 600, 'floor', 3);
 	_floor.scale.setTo(0.5, 0.5);
-
-	for(var i = 0; i< places.length; i++){
-		var place = places[i];
-		console.log(place.x, place.y);
-		this.add.sprite(place.x, place.y, 'krzeslo', 0);
-	}
-
-	this.add.sprite(304, 224, 'stol', 0);
-	this.add.sprite(480, 224, 'stol', 0);
-	this.add.sprite(304, 352, 'stol', 0);
-	this.add.sprite(480, 352, 'stol', 0);
 	
 	var _lvl_choice = this.add.sprite(-816, -288, 'lvl_choice');
 	
@@ -89,92 +88,109 @@ Level_01.prototype.create = function () {
 	
 	// public fields
 	
-
-	this.add.sprite(0, 0, 'cashBar');
-	var gfx = this.add.graphics(10,20);
-	gfx.lineStyle(20, 0x7FFF00, 0.8);
-	cashLine = gfx.lineTo(40,0);
-	cashUI = this.add.bitmapText(46, 14, 'nesfont',cash + "/" + maxCash,64);
-
 	this.fLvl_choice = _lvl_choice;
 	this.f_add_router = __add_router;
-	this.time.events.repeat(Phaser.Timer.SECOND * 1, 6, this.add_random_people, this);
-	this.add_random_people();
-	if (this.sprites.length != 0) {
-		game.time.events.loop(Phaser.Timer.SECOND * 2, Level_01.prototype.smoke, this);
-	}
-	var w = 800, h=600;
-	// Create a label to use as a button
-	pause_label = game.add.text(w - 80, 10, 'Pause', { font: '24px Arial', fill: '#fff' });
-	pause_label.inputEnabled = true;
-	pause_label.events.onInputUp.add(function () {
-	    // When the paus button is pressed, we pause the game
-	    game.paused = true;
+		this.fLvl_choice = _lvl_choice;
+		this.f_add_router = __add_router;
+			
+			this.fLvl_choice = _lvl_choice;
+			this.f_add_router = __add_router;
+				this.fLvl_choice = _lvl_choice;
+				this.f_add_router = __add_router;
+				this.add.sprite(0, 0, 'cashBar');
+				var gfx = this.add.graphics(10,20);
+				gfx.lineStyle(20, 0x7FFF00, 0.8);
+				cashLine = gfx.lineTo(40,0);
+				cashUI = this.add.bitmapText(46, 14, 'nesfont',cash + "/" + maxCash,64);
+				
+				
+				this.time.events.repeat(Phaser.Timer.SECOND * 1, 6, this.add_random_people, this);
+				this.add_random_people();
+				if (this.sprites.length != 0) {
+					game.time.events.loop(Phaser.Timer.SECOND * 2, Level_01.prototype.smoke, this);
+				}
+				var w = 800, h=600;
+				// Create a label to use as a button
+				pause_label = game.add.text(w - 100, 20, 'Pause', { font: '24px Arial', fill: '#fff' });
+				pause_label.inputEnabled = true;
+				pause_label.events.onInputUp.add(function () {
+				    // When the paus button is pressed, we pause the game
+				    game.paused = true;
+				
+				    // Then add the menu
+				    lvl_choice = game.add.sprite(w/2, h/2, 'lvl_choice');
+				    lvl_choice.anchor.setTo(0.5, 0.5);
+				
+				    // And a label to illustrate which menu item was chosen. (This is not necessary)
+				    choiseLabel = game.add.text(w/2, h-150, 'Click outside menu to continue', { font: '30px Arial', fill: '#fff' });
+				    choiseLabel.anchor.setTo(0.5, 0.5);
+				});
+				
+				// Add a input listener that can help us return from being paused
+				game.input.onDown.add(unpause, self);
+				
+				// And finally the method that handels the pause menu
+				function unpause(event){
+				    // Only act if paused
+				    if(game.paused){
+				        // Calculate the corners of the menu
+				        var x1 = w/2 - 150/2, x2 = w/2 + 150/2,
+				            y1 = h/2 - 50/2, y2 = h/2 + 50/2;
+				
+				        // Check if the click was inside the menu
+				        if(event.x > x1 && event.x < x2 && event.y > y1 && event.y < y2 ){
+				            // The choicemap is an array that will help us see which item was clicked
+				            var choisemap = ['one', 'two', 'three'];
+				
+				            // Get menu local coordinates for the click
+				            var x = event.x - x1,
+				                y = event.y - y1;
+				
+				            // Calculate the choice 
+				            var choise = Math.floor(x / 50) + 3*Math.floor(y / 50);
+				
+				            // Display the choice
+				            choiseLabel.text = 'You chose menu item: ' + choisemap[choise];
+				            console.log(choise);
+				            
+				            if(choise == 0){
+				            	game.state.start('Level');
+				            	lvl_choice.destroy();
+				                choiseLabel.destroy();
+				                game.paused = false;
+				            } else if (choise == 1){
+				            	game.state.start('Level_01');
+				            	lvl_choice.destroy();
+				                choiseLabel.destroy();
+				                game.paused = false;
+				            } else if (choise == 2) {
+				            	game.state.start('Level_02');
+				            	lvl_choice.destroy();
+				                choiseLabel.destroy();
+				                game.paused = false;
+				            }
+				        }
+				        else{
+				            // Remove the menu and the label
+				        	lvl_choice.destroy();
+				            choiseLabel.destroy();
+				
+				            // Unpause the game
+				            game.paused = false;
+				        }
+				    }
+				}
+				
+				for(var i = 0; i< places_01.length; i++){              
+					var place = places_01[i];
+					this.add.sprite(place.x, place.y, place.z, 0);
+				}
 	
-	    // Then add the menu
-	    lvl_choice = game.add.sprite(w/2, h/2, 'lvl_choice');
-	    lvl_choice.anchor.setTo(0.5, 0.5);
-	
-	    // And a label to illustrate which menu item was chosen. (This is not necessary)
-	    choiseLabel = game.add.text(w/2, h-150, 'Click outside menu to continue', { font: '30px Arial', fill: '#fff' });
-	    choiseLabel.anchor.setTo(0.5, 0.5);
-	});
-	
-	// Add a input listener that can help us return from being paused
-	game.input.onDown.add(unpause, self);
-	
-	// And finally the method that handels the pause menu
-	function unpause(event){
-	    // Only act if paused
-	    if(game.paused){
-	        // Calculate the corners of the menu
-	        var x1 = w/2 - 150/2, x2 = w/2 + 150/2,
-	            y1 = h/2 - 50/2, y2 = h/2 + 50/2;
-	
-	        // Check if the click was inside the menu
-	        if(event.x > x1 && event.x < x2 && event.y > y1 && event.y < y2 ){
-	            // The choicemap is an array that will help us see which item was clicked
-	            var choisemap = ['one', 'two', 'three'];
-	
-	            // Get menu local coordinates for the click
-	            var x = event.x - x1,
-	                y = event.y - y1;
-	
-	            // Calculate the choice 
-	            var choise = Math.floor(x / 50) + 3*Math.floor(y / 50);
-	
-	            // Display the choice
-	            choiseLabel.text = 'You chose menu item: ' + choisemap[choise];
-	            
-	            if(choise == 0){
-	            	game.state.start('Level_00');
-	            	lvl_choice.destroy();
-	                choiseLabel.destroy();
-	                game.paused = false;
-	            } else if (choise == 1){
-	            	game.state.start('Level_01');
-	            	lvl_choice.destroy();
-	                choiseLabel.destroy();
-	                game.paused = false;
-	            } else if (choise == 2) {
-	            	game.state.start('Level_02');
-	            	lvl_choice.destroy();
-	                choiseLabel.destroy();
-	                game.paused = false;
-	            }
-	        }
-	        else{
-	            // Remove the menu and the label
-	        	lvl_choice.destroy();
-	            choiseLabel.destroy();
-	
-	            // Unpause the game
-	            game.paused = false;
-	        }
-	    }
-	}
-	
-	
+				for(var i = 0; i< places_01_table.length; i++){              
+					var place = places_01_table[i];
+					this.add.sprite(place.x, place.y, place.z, 0);
+				}
+		
 	
 };
 
@@ -199,8 +215,7 @@ Level_01.prototype.add_random_people = function add_random_people() {
 
     this.add_sprite = function(x, y, sprite_name){
         var sprite = this.add.sprite(x, y, sprite_name , 10);
-        sprite.animations.add('walk_right', [3, 4, 5], 4, true);
-        sprite.animations.add('walk_left', [9, 10, 11], 4, true);
+        sprite.animations.add('blow_up', [3, 4, 5], 4, true);
         sprite.animations.add('walk_up', [0, 1, 2], 4, true);
         sprite.animations.add('walk_down', [6, 7, 8], 4, true);
         sprite.data.id_router = null;
@@ -209,15 +224,15 @@ Level_01.prototype.add_random_people = function add_random_people() {
         this.sprites.push(sprite);
     };
 
-	position = Math.floor(Math.random()*places.length);
+	position = Math.floor(Math.random()*places_01.length);
 	random_number = Math.floor(Math.random()*5);
-	if (typeof places[0] !== 'undefined') {
-		var place = places[position];
+	if (typeof places_01[0] !== 'undefined') {
+		var place = places_01[position];
 		place.x = place.x - 12;
 		place.y = place.y - 16;
 		var sprite_names = ["ninja_f","ninja_m","warrior_m","townfolk1_f","ranger_f","ranger_m"];
 		this.add_sprite(place.x, place.y,sprite_names[random_number]);
-		places.splice(position, 1);
+		places_01.splice(position, 1);
 	} else {
 		console.log("added random");
 	}
@@ -280,7 +295,7 @@ Level_01.prototype.addRouter = function () {
 		_wifi.animations.add('beep', [0,1,2,3,4,5,6], 3, true);
 	} else if(_wifi.data.level == 2){
 		_wifi = this.add.sprite(250, 5, "wifi_zzn");
-		_wifi.animations.add('beep', [0,1,2,3,4,5,6,7,8], 3, true)
+		_wifi.animations.add('beep', [0,1,2,3,4,5,6,7,8], 3, true);
 	} else if(_wifi.data.level == 3){
 		_wifi = this.add.sprite(250, 5, "wifi_zznc");
 		_wifi.animations.add('beep', [4,5,0,2,3,1,6,7,8], 4, true);

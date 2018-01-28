@@ -407,9 +407,9 @@ Level_01.prototype.SpriteDraged = function (dragedObj) {
 Level_01.prototype.upgreade = function listener (data) {
 
 console.log(data);
-this.active_sprite = data;
+active_sprite = data ;
 console.log("-------------------------------------------------------");
-console.log(this.active_sprite);
+console.log(active_sprite);
 
 _add_range.events.onInputUp.add(Level_01.prototype.addRange);
 
@@ -428,7 +428,7 @@ Level_01.prototype.UpdateCost = function UpdateCost () {
 // this.wifis.data.level += 1;
 // _wifi.data.range += 10;
 if (cash > 100) {
-console.log(this.active_sprite);
+console.log(active_sprite);
 _add_range.inputEnabled = true;
 _add_range.tint = 0xffffff;
 _add_transfer.inputEnabled = false;

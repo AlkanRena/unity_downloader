@@ -38,6 +38,7 @@ var cashLine;
 var upgradeCost=50;
 var _add_range;
 var _add_transfer;
+var active_sprite;
 
 
 
@@ -66,6 +67,7 @@ Level_01.prototype.init = function () {
 	this.scale.pageAlignVertically = true;
 	
 	this.sprites=[];
+	this.wifis=[];
 	cash = 40;
 	
 };
@@ -111,8 +113,15 @@ Level_01.prototype.create = function () {
 						cashLine = gfx.lineTo(40,0);
 						cashUI = this.add.bitmapText(46, 14, 'nesfont',cash + "/" + maxCash,64);
 						
-						
+						_add_range = this.add.sprite(350, 5, "ui_icons", 54);
+						_add_range.inputEnabled = true;
+						_add_range.events.onInputUp.add(Level_01.prototype.addRange);
+	
+						_add_transfer = this.add.sprite(400, 5, "ui_icons", 93);
+						_add_transfer.inputEnabled = true;
+						_add_transfer.events.onInputUp.add(Level_01.prototype.addTransfer);
 						this.time.events.repeat(Phaser.Timer.SECOND * 1, 6, this.add_random_people, this);
+						this.time.events.loop(Phaser.Timer.SECOND * 0.5, this.UpdateCost, this);
 						this.add_random_people();
 						if (this.sprites.length != 0) {
 							game.time.events.loop(Phaser.Timer.SECOND * 2, Level_01.prototype.smoke, this);
@@ -191,20 +200,13 @@ Level_01.prototype.create = function () {
 						
 						for(var i = 0; i< places_01.length; i++){              
 							var place = places_01[i];
-							this.add.sprite(place.x, place.y, place.z, 0);
 						}
 			
 						for(var i = 0; i< places_01_table.length; i++){              
 							var place = places_01_table[i];
 							this.add.sprite(place.x, place.y, place.z, 0);
 						}
-						_add_range = this.add.sprite(350, 5, "ui_icons", 54);
-						_add_range.inputEnabled = true;
-						_add_range.events.onInputUp.add(Level_01.prototype.addRange);
-	
-						_add_transfer = this.add.sprite(400, 5, "ui_icons", 93);
-						_add_transfer.inputEnabled = true;
-						_add_transfer.events.onInputUp.add(Level_01.prototype.addTransfer);
+						
 	
 };
 
@@ -223,17 +225,6 @@ Level_01.prototype.update = function () {
     cashLine.width=line;
     cashUI.setText(cash + "/" + maxCash);
 
-    if (cash > 20) {
-    	_add_range.inputEnabled = true;
-		_add_range.tint = 0xffffff;
-		_add_transfer.inputEnabled = false;
-		_add_transfer.tint = 0xffffff;
-	} else {
-		_add_range.inputEnabled = false;
-		_add_range.tint = 0xbbbbbb;
-		_add_transfer.inputEnabled = false;
-		_add_transfer.tint = 0xbbbbbb;
-	}
 
 };
 
@@ -309,26 +300,30 @@ Level_01.prototype.addRouter = function () {
 	_wifi.animations.add('beep', [0,1,2,3,4,5,6,7,8], 4, true);
 	_wifi.animations.play('beep');
 	
-	_wifi.data.level = 3;
+	_wifi.data.level = 0;
+
 	_wifi.data.range = 10;
 	_wifi.data.transfer = 10;
 	if(_wifi.data.level == 0){
 		_wifi = this.add.sprite(250, 5, "wifi_z");
 		_wifi.animations.add('beep', [0,1,2,3,4,5,6], 3, true);
-	} else if(_wifi.data.level == 1){
-		_wifi = this.add.sprite(250, 5, "wifi_zz");
-		_wifi.animations.add('beep', [0,1,2,3,4,5,6], 3, true);
-	} else if(_wifi.data.level == 2){
-		_wifi = this.add.sprite(250, 5, "wifi_zzn");
-		_wifi.animations.add('beep', [0,1,2,3,4,5,6,7,8], 3, true);
-	} else if(_wifi.data.level == 3){
-		_wifi = this.add.sprite(250, 5, "wifi_zznc");
-		_wifi.animations.add('beep', [4,5,0,2,3,1,6,7,8], 4, true);
 	}
+	// } else if(_wifi.data.level == 1){
+	// 	_wifi = this.add.sprite(250, 5, "wifi_zz");
+	// 	_wifi.animations.add('beep', [0,1,2,3,4,5,6], 3, true);
+	// } else if(_wifi.data.level == 2){
+	// 	_wifi = this.add.sprite(250, 5, "wifi_zzn");
+	// 	_wifi.animations.add('beep', [0,1,2,3,4,5,6,7,8], 3, true);
+	// } else if(_wifi.data.level == 3){
+	// 	_wifi = this.add.sprite(250, 5, "wifi_zznc");
+	// 	_wifi.animations.add('beep', [4,5,0,2,3,1,6,7,8], 4, true);
+	// }
 	_wifi.inputEnabled = true;
 	_wifi.events.onInputUp.add(Level_01.prototype.upgreade);
+
 	_wifi.input.enableDrag();
 	_wifi.animations.play('beep');
+	this.wifis.push(_wifi);
 };
 
 Level_01.prototype.SpriteDraged = function (dragedObj) {
@@ -336,43 +331,44 @@ Level_01.prototype.SpriteDraged = function (dragedObj) {
 };
 
 
-Level_01.prototype.upgreade = function listener (data) {
+ Level_01.prototype.upgreade = function listener (data) {
+	
+ 	console.log(data);
+	this.active_sprite = data;
+ 	console.log("-------------------------------------------------------");
+ 	console.log(this.active_sprite);
 
-// _add_range.events.onInputUp.add(Level_01.prototype.addRange);
+_add_range.events.onInputUp.add(Level_01.prototype.addRange);
 
-// _add_transfer.events.onInputUp.add(Level_01.prototype.addTransfer);
-	// if (sprite.data.level != 4){
-	// 	switch(sprite.data.level) {
-	//     case 0:
-	//         sprite.data.level = 1;
-	//         sprite.data.range = 15;
-	//         sprite.data.transfer = 20;
-	//         cash -= 40;
-	//         break;
-	//     case 1:
-	//         sprite.data.level = 2;
-	//         sprite.data.range = 15;
-	//         sprite.data.transfer = 20;
-	//        	cash -= 80;
-	//         break;
-	//     case 2:
-	//         sprite.data.level = 3;
-	//         sprite.data.range = 20;
-	//         sprite.data.transfer = 40;
-	//         cash -= 120; 
-	//         break;
-	//     case 3:
-	//         sprite.data.level = 4;
-	//         sprite.data.range = 25;
-	//         sprite.data.transfer = 80;
-	//         cash -= 160;
-	// 	}
-	// }
-};
-
-Level_01.prototype.addRange = function () {
+_add_transfer.events.onInputUp.add(Level_01.prototype.addTransfer);
+	
+// 	var sprite;
+	
+//  	if (this.sprite.data.level == 1){
+//  		this.sprite = add.sprite(250, 5, "wifi_zz");
+// 		this.sprite.animations.add('beep', [0,1,2,3,4,5,6], 3, true);
+//  	}	
 
 };
+
+Level_01.prototype.UpdateCost = function UpdateCost () {
+	// this.wifis.data.level += 1;
+	// _wifi.data.range += 10;
+	    if (cash > 100) {
+    	 console.log(this.active_sprite);
+    	_add_range.inputEnabled = true;
+		_add_range.tint = 0xffffff;
+		_add_transfer.inputEnabled = false;
+		_add_transfer.tint = 0xffffff;
+	} else {
+		_add_range.inputEnabled = false;
+		_add_range.tint = 0xbbbbbb;
+		_add_transfer.inputEnabled = false;
+		_add_transfer.tint = 0xbbbbbb;
+	}
+};
+
+Level_01.prototype.addRange = function () {};
 
 Level_01.prototype.addTransfer = function () {
 	

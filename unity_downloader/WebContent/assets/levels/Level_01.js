@@ -305,32 +305,50 @@ cashUI.setText(cash + "/" + maxCash);
 
 
 
- //    for(var j = 0; j < this.routers.length; j++){
- //    	this.routers[j].data.jammers = [];
- //    }
+    for(var j = 0; j < this.routers.length; j++){
+    	this.routers[j].data.jammers = [];
+    }
 
-	// for(var i = 0; i < this.sprites.length; i++){
- //    	this.sprites.router = null;
- //    }
+	for(var i = 0; i < this.sprites.length; i++){
+    	this.sprites[i].data.id_router = null;
+    }
 
-	// for(i = 0; i < 1; i++){
- //        var jammer = this.sprites[i];
-	// 	for(j = 0; j < this.routers.length; j++){
- //            var router = this.routers[j];
- //            var xDiff = jammer.x - router.x;
- //            var yDiff = jammer.y - router.y;
- //            var dist = xDiff*xDiff + yDiff*yDiff;
+	for(i = 0; i < this.sprites.length; i++){
+        var jammer = this.sprites[i];
+		for(j = 0; j < this.routers.length; j++){
+            var router = this.routers[j];
+            var xDiff = jammer.x - router.x;
+            var yDiff = jammer.y - router.y;
+            var dist = xDiff*xDiff + yDiff*yDiff;
 
- //            var range = router.data.range;
- //            var inRange = range* range - dist;
-	// 		if(inRange > 0 ){
- //            	if(jammer.data.id_router === null){
- //                    jammer.data.id_router = j;
- //                    router.data.jammers=[1];
- //                }
-	// 		}
-	// 	}
- //    }
+            var range = router.data.range;
+            var inRange = range* range - dist;
+			if(inRange > 0 ){
+            	if(jammer.data.id_router === null){
+                    jammer.data.id_router = j;
+                    router.data.jammers=[1];
+                }
+			}
+		}
+    }
+    var happiness = []
+    for(var i = 0; i < this.sprites.length; i++){
+
+	    console.log(this.sprites[i].data.id_router );
+	    if(this.sprites[i].data.id_router == null){
+	        if(this.sprites[i].data.happiness>0) {
+                this.sprites[i].data.happiness -= 1;
+            }
+        }else {
+	        if(this.sprites[i].data.happiness<1000){
+                this.sprites[i].data.happiness +=1;
+            }
+        }
+
+        happiness.push(this.sprites[i].data.happiness);
+    }
+
+    console.log(happiness)
 
 
 };
@@ -349,7 +367,7 @@ sprite.animations.add('walk_up', [0, 1, 2], 4, true);
 sprite.animations.add('walk_down', [6, 7, 8], 4, true);
 // sprite.animations.play(place.w, 3, true);
 sprite.data.id_router = null;
-sprite.data.happiness = 50;
+sprite.data.happiness = 500;
 sprite.data.action = 100;
 places_01.splice(position, 1);
 this.sprites.push(sprite);
@@ -365,7 +383,7 @@ var smoke_above = this.sprites[random_number];
 
 _smoke_above_user = this.add.sprite(smoke_above.position.x + 5, smoke_above.position.y - 5, "pop_up", 0);
 
-smoke_above.data.happiness = Math.floor(Math.random()* 100);
+//smoke_above.data.happiness = Math.floor(Math.random()* 100);
 
 if (smoke_above.data.happiness < 15) {
 _smoke_above_user.animations.add('death_smoke', [30, 31, 32, 31, 30], 5, false);
@@ -455,9 +473,9 @@ _add_transfer.events.onInputUp.add(Level_01.prototype.addTransfer);
 };
 
 Level_01.prototype.UpdateCost = function UpdateCost () {
-console.log(active_sprite)
+//console.log(active_sprite)
 if (cash > 100) {
-console.log(active_sprite);
+//console.log(active_sprite);
 _add_range.inputEnabled = true;
 _add_range.tint = 0xffffff;
 _add_transfer.inputEnabled = false;
